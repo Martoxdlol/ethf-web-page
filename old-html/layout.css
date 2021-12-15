@@ -1,0 +1,74 @@
+.screen-section .info {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 310px;
+}
+
+.screen-section .info h2 {
+    font-size: 28px;
+}
+
+.screen-section .info {
+    padding: 20px;
+}
+
+.screen-section .content {
+    width: calc(100% - 310px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: #F5F5F5;
+}
+
+@media (min-width: 993px) {
+    .screen-section .info {
+        width: 350px;
+    }
+    .screen-section .content {
+        width: calc(100% - 350px);
+    }
+}
+
+@media (max-width: 600px) {
+    .screen-section .info {
+        position: relative;
+        width: 100%;
+    }
+    .screen-section .content {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.center {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padd20 {
+    padding: 20px;
+}
+
+.v-center{
+    height: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.v-spaced{
+    height: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

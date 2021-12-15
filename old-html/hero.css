@@ -1,0 +1,109 @@
+#hero {
+    font-family: 'Gotham Medium';
+    height: 100vh;
+}
+
+#hero button, #hero .button {
+    background-color: transparent;
+    color: #FFFFFFBB;
+    border-color: white;
+}
+
+#hero button:hover, #hero .button:hover {
+    color: black;
+    background-color: white;
+}
+
+#hero #img-portada {
+    top: 0;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+#hero #hero-go-down {
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    box-shadow: 0 0 100px -10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    width: 100%;
+}
+
+#hero .title {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#hero .title p {
+    font-family: 'Gotham Medium';
+    color: #FFF;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#hero .title h1 {
+    font-size: 40px;
+    font-family: 'Gotham Medium';
+    color: #FFF;
+    font-weight: 500;
+}
+
+#hero nav {
+    height: 70px;
+    width: 100%;
+}
+
+#hero nav ul {
+    list-style-type: none;
+}
+
+#hero nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#hero .menu {
+    display: inline-block;
+    margin: 14px;
+    border-radius: 12px;
+    background-color: #FFFFFF33;
+    padding: 8px 16px;
+    font-family: 'Gotham Medium';
+    font-weight: 500;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.button, button {
+    width: 170px;
+    font-size: 12px!important;
+    padding: 8px 16px!important;
+}
+
+@media (max-width: 600px) {
+    .button, button {
+        font-size: 12px!important;
+        padding: 8px 16px!important;
+    }
+    .bottom>div:nth-child(1) {
+        display: flex;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .bottom>div:nth-child(1)>* {
+        flex-grow: 1;
+    }
+    .bottom>div:nth-child(2) {
+        display: flex;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .bottom>div:nth-child(2)>* {
+        flex-grow: 1;
+    }
+}

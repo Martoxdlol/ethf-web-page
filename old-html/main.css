@@ -1,0 +1,148 @@
+@import "./fonts.css";
+@import "./main-text.css";
+@import "./buttons-and-links.css";
+@import "./hero.css";
+@import "./icons.css";
+@import "./menu.css";
+@import "./layout.css";
+@import "./resumen.css";
+@import "./contact.css";
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+.screen-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .screen-section {
+        height: auto;
+    }
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+@media (min-width: 601px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .desktop {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#scroll-up-arrow, #scroll-down-arrow {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    right: 0;
+    cursor: pointer;
+}
+
+#scroll-up-arrow {
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+#scroll-down-arrow {
+    bottom: 0;
+}
+
+#scroll-pages-container {
+    position: fixed;
+    left: 0;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+#scroll-pages-container * {
+    user-select: none;
+}
+
+.scroll-page-item {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scroll-page-item .label {
+    font-size: 14px;
+    display: none;
+}
+
+.scroll-page-item:hover .label {
+    font-size: 14px;
+    display: inline;
+}
+
+.scroll-page-item .block {
+    height: 24px;
+    width: 1px;
+    margin-left: 17px;
+    margin-right: 6px;
+    background-color: #d0d1d2;
+}
+
+.scroll-page-item .block.selected {
+    height: 24px;
+    width: 3px;
+    margin-left: 16px;
+    margin-right: 6px;
+    background-color: black;
+}
+
+video, img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.logo {
+    padding: 10px 35px;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

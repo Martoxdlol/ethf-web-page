@@ -1,0 +1,49 @@
+.icon {
+    width: 30px;
+}
+
+.go-down-middle {
+    width: 70px;
+    height: 70px;
+    filter: invert(1);
+    animation: updownwait 2.1s infinite;
+    cursor: pointer;
+}
+
+@keyframes updownwait {
+    0% {
+        transform: translateY(0);
+    }
+    16% {
+        transform: translateY(8px);
+    }
+    28% {
+        transform: translateY(4px);
+    }
+    40% {
+        transform: translateY(8px);
+    }
+    60% {
+        transform: translateY(0);
+    }
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.social-icons a {
+    display: flex;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.social-icons a p {
+    padding-top: 2px;
+    font-size: 17px;
+    padding-left: 10px;
+}

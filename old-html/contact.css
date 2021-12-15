@@ -1,0 +1,10 @@
+#contacto .content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    #contacto iframe {
+        height: 450px;
+    }
+}
