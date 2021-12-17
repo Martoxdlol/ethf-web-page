@@ -9,9 +9,7 @@ export default function Page(props) {
         </PageTemplate>
     }
 
-    console.log(page)
-
-    return <PageTemplate title={page.name} links={props.links}>
+    return <PageTemplate title={page.name} navLinks={props.navLinks} relatedLinks={props.relatedLinks}>
         <UnsafeHtml html={page.html} />
     </PageTemplate>
 }

@@ -1,3 +1,9 @@
+.header {
+    height: 60vh;
+    background-color: gray;
+}
+
+
 .main {
     padding: 0 22px;
     margin: auto;
@@ -28,4 +34,20 @@
 
 .main p {
     font-size: 19px;
+}
+
+.relatedLinks {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0 20px;
+    position: sticky;
+    top: 70px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    max-width: 140px;
+}
+
+.relatedLinks ul {
+    list-style-type: none;
+    padding: 0;
 }
