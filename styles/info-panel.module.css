@@ -1,0 +1,40 @@
+.info_panel {
+    display: none;
+    position: absolute;
+    margin: 10px 0;
+    border: 1px solid #DDD;
+    border-radius: 12px;
+    margin-left: 10px;
+    padding: 6px;
+}
+
+@media (min-width: 1110px) {
+    .info_panel {
+        display: block;
+    }
+}
+
+.info_panel label {
+    display: block;
+}
+
+.info_panel ul li {
+    display: block;
+}
+
+.info_panel ul li a, .info_panel label, .info_panel span {
+    display: block;
+    padding: 8px 20px;
+    width: 180px;
+    font-weight: 500;
+}
+
+.info_panel ul li a:hover, .info_panel span:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.info_panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

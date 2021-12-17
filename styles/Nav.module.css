@@ -4,6 +4,7 @@
     left: 0;
     width: 100%;
     transition: 0.1s;
+    z-index: 1;
 }
 
 .nav ul {
@@ -19,7 +20,7 @@
 }
 
 .nav ul li:hover {
-    background-color: rgba(0,0,0,0.15);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .nav ul li a {
@@ -29,11 +30,15 @@
     color: black;
 }
 
+.logo {
+    position: absolute;
+}
+
 .nav ul li ul {
     top: 100%;
     right: 0;
     display: none;
-    box-shadow: 0 2px 7px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.3);
     /* border-radius: 6px; */
     overflow: hidden;
 }
@@ -48,4 +53,80 @@
     background-color: white;
     position: absolute;
     display: block;
+}
+
+.openmenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+    margin: 8px;
+    padding: 4px 8px;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+.nav[menuopened=true] .openmenu{
+    color: black!important;
+}
+
+@media (max-width: 799px) {
+    .openmenu {
+        display: block;
+    }
+
+    .nav[menuopened=true] ul {
+        background-color: white !important;
+    }
+
+    .nav[menuopened=true] ul * {
+        color: black !important;
+    }
+
+    .nav[menuopened=true]>ul {
+        max-height: 100vh;
+        overflow: auto;
+    }
+
+    .nav[menuopened=false] ul {
+        overflow: hidden;
+    }
+
+    .nav>ul {
+        padding-top: 48px;
+        display: block;
+        color: red !important;
+        top: 40px;
+        max-height: 0;
+    }
+
+    .nav>ul li {
+        display: block;
+        float: none;
+        background-color: white !important;
+    }
+
+    .nav>ul>li>a {
+        font-size: 15px;
+    }
+
+    .nav>ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .nav ul li:hover ul, .nav ul li ul:hover, .nav ul li ul, .nav ul li ul {
+        position: relative !important;
+        display: block !important;
+        float: none;
+        box-shadow: none;
+    }
+
+    .nav[menuopened=true] ul li ul li a {
+        padding: 4px 13px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgb(50,50,50)!important;
+        width: 100%;
+    }
 }

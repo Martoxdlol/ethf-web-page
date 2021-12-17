@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import styles from '../styles/Nav.module.css'
+import Logo from "./logo";
 
 
 function reverseArr(input) {
@@ -12,10 +13,11 @@ function reverseArr(input) {
 }
 
 
+
 export default function Nav(props) {
     const _window = typeof window != 'undefined' ? window : null
     const links = reverseArr(props.links || [])
-    const [onTop, setOnTop] = useState(!(_window?.scrollY > 0))
+    const [onTop, setOnTop] = useState(true)
     useEffect(() => {
         const l = e => {
             setOnTop(!(_window?.scrollY > 0))
@@ -25,9 +27,30 @@ export default function Nav(props) {
             window.removeEventListener('scroll', l)
         }
     })
-    return <nav className={styles.nav} style={{ backgroundColor: onTop ? 'transparent' : 'white' }}>
-        <ul>
-            {links.map(link => {
+
+    const [menuopened, setMenuopened] = useState(false)
+
+    useEffect(() => {
+        if (menuopened) {
+            window.document.body.style.overflow = 'hidden'
+        }
+        return () => {
+            window.document.body.style.overflow = 'auto'
+        }
+    }, [menuopened])
+
+    function togglemenu() {
+        setMenuopened(!menuopened)
+    }
+
+
+    return <nav className={styles.nav} style={{ backgroundColor: onTop ? 'transparent' : 'white', boxShadow: onTop ? '' : '0 0 5px 0 rgb(0 0 0 / 20%)' }} menuopened={menuopened.toString()}>
+        <Logo />
+        <a href="#!" className={styles.openmenu} onClick={togglemenu} style={{ color: onTop ? 'white' : 'black' }}>MENU</a>
+        <ul onClick={e => {
+            if(e.target.tagName == 'A') setMenuopened(false)
+        }}>
+            {links && links.map(link => {
                 return <li key={link.key}>
                     <Link href={link.path}>
                         <a disabled={link.disabled} style={{ color: onTop ? 'white' : 'black' }}>

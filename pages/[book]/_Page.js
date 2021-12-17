@@ -1,5 +1,5 @@
 import PageTemplate from "../../components/_template"
-import { UnsafeHtml } from "../../components/_unsafe_html"
+import RenderDocument from "../_RenderDocument"
 
 export default function Page(props) {
     const { page } = props
@@ -9,7 +9,13 @@ export default function Page(props) {
         </PageTemplate>
     }
 
-    return <PageTemplate title={page.name} navLinks={props.navLinks} relatedLinks={props.relatedLinks}>
-        <UnsafeHtml html={page.html} />
+    return <PageTemplate
+        title={page.name}
+        navLinks={props.navLinks}
+        relatedLinks={props.relatedLinks}
+        page={page}
+        image={page.image}
+    >
+        <RenderDocument page={page} />
     </PageTemplate>
 }

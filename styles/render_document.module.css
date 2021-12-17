@@ -1,0 +1,48 @@
+.c p, .c h1, .c h2, .c h3, .c h4, .c span, .c p .c a {
+    user-select: text !important;
+}
+
+.c h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.c p {
+    margin: 12px 0px;
+    font-size: 1.2em;
+    text-align: justify
+}
+
+.c li {
+    font-size: 1.2em;
+}
+
+.c ul {
+    border: 1px solid #F7F7F7;
+    border-radius: 6px;
+    display: block;
+}
+
+.c ul>li, .c ol>li {
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.c ul li>ul>li, .c ul li>ol>li {
+    font-size: 1em;
+}
+
+.c ul ul {
+    border: none;
+}
+
+.c label{
+    display: inline-block;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: #444;
+    font-weight: 800;
+  }

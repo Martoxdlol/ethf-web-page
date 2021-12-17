@@ -2,6 +2,8 @@ import PageHead from "./_head";
 import Nav from "./_nav";
 import styles from '../styles/PageTemplate.module.css'
 import Link from "next/link";
+import InfoPanel from "./info_panel";
+import Footer from "./footer";
 
 export default function PageTemplate(props) {
     return <>
@@ -9,25 +11,16 @@ export default function PageTemplate(props) {
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
         </PageHead>
-        <header className={styles.header}>
-            <Nav links={props.navLinks}/>
+        <header className={styles.header} style={{ backgroundImage: 'url("' + props.image + '")' }}>
+            <Nav links={props.navLinks} />
+            <div className={styles.overlay}>
+                <h1>{props.title}</h1>
+            </div>
         </header>
-        {props.relatedLinks && <aside className={styles.relatedLinks}>
-            <ul>
-            {props.relatedLinks.map(link => <li key={link.path}>
-                <Link href={link.path}>
-                    <a>
-                        {link.name}
-                    </a>
-                </Link>
-            </li>)}
-            </ul>
-        </aside>}
+        <InfoPanel links={props.relatedLinks} page={props.page} />
         <main className={styles.main}>
             {props.children}
         </main>
-        <footer>
-
-        </footer>
+        <Footer/>
     </>
 }
