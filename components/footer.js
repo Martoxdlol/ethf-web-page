@@ -16,26 +16,26 @@ export default function Footer(props) {
         <div className={styles.social}>
             <figure>
                 <a href="https://twitter.com/EscuelaFord" rel="noreferrer" target="_blank">
-                    <img src="/icons/twitter.svg" alt="Twitter" />
+                    <img src="/icons/twitter.svg" alt="Twitter" width={55} />
                 </a>
             </figure>
             <figure>
                 <a href="https://www.instagram.com/escuelatecnicahenryford" rel="noreferrer" target="_blank">
-                    <img src="/icons/instagram.svg" alt="Instagram" />
+                    <img src="/icons/instagram.svg" alt="Instagram" width={55} />
                 </a>
             </figure>
             <figure>
                 <a href="https://www.youtube.com/channel/UCUPz0NJCQHCOjbyMylHVjGA" rel="noreferrer" target="_blank">
-                    <img src="/icons/youtube.svg" alt="Youtube" />
+                    <img src="/icons/youtube.svg" alt="Youtube" width={55} />
 
                 </a>
             </figure>
             <figure>
                 <a href="tel:+543327428831">
-                    <img src="/icons/phone.svg" alt="Teléfono" />
+                    <img src="/icons/phone.svg" alt="Teléfono" width={55} />
                 </a>
             </figure><figure><a href="mailto:escuela@henryford.edu.ar" rel="noreferrer" target="_blank">
-                <img src="/icons/email.svg" alt="Email" />
+                <img src="/icons/email.svg" alt="Email" width={55} />
             </a>
             </figure>
         </div>

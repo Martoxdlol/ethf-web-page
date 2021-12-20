@@ -76,6 +76,16 @@
   margin: auto;
   max-width: 800px;
   padding: 10px;
+  text-align: center;
+}
+
+.main .container h2 {
+  font-weight: 500;
+}
+
+.main .container h3 {
+  font-size: 24px;
+  margin: 0;
 }
 
 @media (min-width: 1000px) {}
