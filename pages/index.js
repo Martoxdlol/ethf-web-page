@@ -25,7 +25,7 @@ export default function Home(props) {
         </h1>
 
         <p className={styles.description}>
-          Educación de exelencia, especialización electromecánica
+          Educación de excelencia, especialización electromecánica
         </p>
 
         <div className={styles.grid}>
