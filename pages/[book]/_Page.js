@@ -1,3 +1,4 @@
+import Link from "next/link"
 import PageTemplate from "../../components/_template"
 import RenderDocument from "../_RenderDocument"
 
@@ -5,7 +6,10 @@ export default function Page(props) {
     const { page } = props
     if (!page) {
         return <PageTemplate title={"Página no encontrada"}>
-            404
+            <h2>No se pudo encontrar la página buscada.</h2>
+            <Link href="/">
+                <a className="big-btn">Inicio</a>
+            </Link>
         </PageTemplate>
     }
 

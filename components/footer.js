@@ -39,6 +39,11 @@ export default function Footer(props) {
             </a>
             </figure>
         </div>
-
+        <a href="#!" style={{fontSize: '9px', position: 'absolute'}} onClick={() => {
+            const key = prompt("Clave")
+            if (key) {
+                fetch('/api/update?key=' + encodeURIComponent(key))
+            }
+        }}>Actualizar</a>
     </footer>
 }

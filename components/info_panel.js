@@ -13,12 +13,12 @@ export default function InfoPanel(props) {
                 </Link>
             </li>)}
         </ul>
-        {props.page && <>
+        {/* {props.page && <>
             <label>Página</label>
             <ul>
                 <li><a href={props.page.doc_url}>Editar</a></li>
             </ul>
-        </>}
+        </>} */}
 
     </aside>
 }
