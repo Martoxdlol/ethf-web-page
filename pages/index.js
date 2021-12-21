@@ -13,6 +13,7 @@ export default function Home(props) {
       <html lang={'es'} />
       <title>Escuela de Educación Secundaria Técnica Henry Ford</title>
       <meta name="description" content="Escuela secundaria de excelencia en especialización electromecánica.  Accede a información sobre inscripciones e imágenes y contenido sobre la escuela." />
+      {/* <meta name="viewport" content="width=device-width, initial-scale=0.9" /> */}
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div className={styles.background}>
@@ -43,12 +44,12 @@ export default function Home(props) {
             </a>
           </Link>
 
-          <Link href="https://www.henryford.edu.ar/moodle/">
-            <a className={styles.card}>
-              <h2>Aula virtual &rarr;</h2>
-              <p>Acceder a la plataforma</p>
-            </a>
-          </Link>
+
+          <a className={styles.card} href="https://www.henryford.edu.ar/moodle/">
+            <h2>Aula virtual &rarr;</h2>
+            <p>Acceder a la plataforma</p>
+          </a>
+
 
           <Link href="#main">
             <a className={styles.card}>
