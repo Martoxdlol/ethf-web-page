@@ -125,5 +125,5 @@ export async function getStaticProps() {
   processPageHtml(page)
   page.sections = analizeSections(page)
   const links = await getAllLinks()
-  return { props: { links, sections: page.sections } }
+  return { props: { links, sections: page.sections }, revalidate: 10 }
 }
