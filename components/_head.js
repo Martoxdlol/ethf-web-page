@@ -12,7 +12,7 @@ export default function PageHead(props) {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-61MY92XHNB');`.replace(/[ \n]/gi, '')
+        gtag('config', 'G-61MY92XHNB');`.replace(/[\n]/gi, '')
         }</script>
     </Head>
 }
