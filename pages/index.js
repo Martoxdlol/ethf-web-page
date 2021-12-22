@@ -6,14 +6,14 @@ import Nav from '../components/_nav'
 import { getAllLinks, getPageById, getPageByPath } from '../lib/_get_content'
 import Footer from '../components/footer'
 import processPageHtml, { analizeSections, getMainSections } from '../lib/_process_page_html'
+import PageHead from '../components/_head'
 
 export default function Home(props) {
   return (<>
+    <PageHead/>
     <Head>
-      <html lang={'es'} />
       <title>Escuela de Educación Secundaria Técnica Henry Ford</title>
       <meta name="description" content="Escuela secundaria de excelencia en especialización electromecánica.  Accede a información sobre inscripciones e imágenes y contenido sobre la escuela." />
-      {/* <meta name="viewport" content="width=device-width, initial-scale=0.9" /> */}
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div className={styles.background}>
