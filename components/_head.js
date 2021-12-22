@@ -8,11 +8,7 @@ export default function PageHead(props) {
         {props.children}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-61MY92XHNB"></script>
         <script>{
-`        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-61MY92XHNB');`.replace(/[\n]/gi, '')
+`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}  gtag('js', new Date()); gtag('config', 'G-61MY92XHNB');`
         }</script>
     </Head>
 }
