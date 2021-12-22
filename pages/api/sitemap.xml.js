@@ -1,6 +1,8 @@
 import xml from 'xml'
 import { getAllLinks, getPagesBooksAndChapters, _linkPath } from "../../lib/_get_content";
 
+const URL_BASE = 'https://henryford.edu.ar'
+
 export default async function handler(req, res) {
     res.setHeader('Content-Type', 'text/xml');
 
@@ -12,7 +14,7 @@ export default async function handler(req, res) {
         // Default url
         {
             url: [
-                { loc: '/', },
+                { loc: URL_BASE + '/', },
                 { changefreq: 'weekly' },
                 { priority: 1 },
             ]
@@ -29,7 +31,7 @@ export default async function handler(req, res) {
 
         xml_links.push({
             url: [
-                { loc: url, },
+                { loc: URL_BASE + url, },
                 { lastmod: page.updated_at.split('T')[0] },
                 { changefreq: 'monthly' },
                 { priority },
