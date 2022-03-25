@@ -33,7 +33,7 @@ export default function Home(props) {
           <Link href="/ingreso">
             <a className={styles.card}>
               <h2>Ingreso 2023 &rarr;</h2>
-              <p>Información e instrucciones</p>
+              <p>Información</p>
             </a>
           </Link>
 
