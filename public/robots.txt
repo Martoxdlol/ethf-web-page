@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /moodle
 
 Sitemap: https://www.henryford.edu.ar/api/sitemap.xml
