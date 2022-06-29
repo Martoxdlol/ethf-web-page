@@ -3,7 +3,7 @@ import { useLayoutEffect, useRef } from 'react'
 import styles from '../../styles/ContentRenderer.module.css'
 // import pageCss from '../pageCss'
 
-export default function ContentRenderer({ content }) {
+export default function ContentRenderer({ content, css }) {
     const ref = useRef(null)
     
     const router = useRouter()
@@ -26,7 +26,7 @@ export default function ContentRenderer({ content }) {
 
     return <div className={styles.content} ref={ref}>
         <div
-            dangerouslySetInnerHTML={{ __html: '<style>' + '/* pageCss */' + '</style>' + content }}
+            dangerouslySetInnerHTML={{ __html: '<style>' + (css ?? '') + '</style>' + content }}
             onClick={(e) => {
                 if (e.target.tagName === "A") {
                     e.preventDefault()
