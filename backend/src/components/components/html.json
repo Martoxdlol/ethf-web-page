@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_components_htmls",
+  "info": {
+    "displayName": "HTML",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Code": {
+      "type": "text"
+    },
+    "CSS": {
+      "type": "text"
+    }
+  }
+}

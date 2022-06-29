@@ -41,7 +41,12 @@
       "components": [
         "components.image-card",
         "components.paragraph",
-        "components.title"
+        "components.title",
+        "components.html",
+        "components.label-link",
+        "components.left-image-card",
+        "components.media-link",
+        "components.multimedia"
       ]
     }
   }

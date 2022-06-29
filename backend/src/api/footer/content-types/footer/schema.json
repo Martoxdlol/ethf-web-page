@@ -17,7 +17,12 @@
       "components": [
         "components.label-link",
         "components.paragraph",
-        "components.title"
+        "components.title",
+        "components.html",
+        "components.image-card",
+        "components.left-image-card",
+        "components.media-link",
+        "components.multimedia"
       ]
     }
   }

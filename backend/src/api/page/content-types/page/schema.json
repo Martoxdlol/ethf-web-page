@@ -30,7 +30,11 @@
         "components.image-card",
         "components.label-link",
         "components.paragraph",
-        "components.title"
+        "components.title",
+        "components.multimedia",
+        "components.html",
+        "components.left-image-card",
+        "components.media-link"
       ]
     },
     "URL_Name": {

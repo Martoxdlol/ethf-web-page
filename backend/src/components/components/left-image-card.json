@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_components_left_image_cards",
+  "info": {
+    "displayName": "Left Image Card",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "Info": {
+      "type": "richtext"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

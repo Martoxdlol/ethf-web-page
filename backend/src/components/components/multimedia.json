@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_components_multimedias",
+  "info": {
+    "displayName": "Multimedia",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "Caption": {
+      "type": "string"
+    },
+    "Media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Wdith": {
+      "type": "string"
+    },
+    "Height": {
+      "type": "string"
+    },
+    "CSS": {
+      "type": "string"
+    }
+  }
+}
