@@ -1,0 +1,40 @@
+.user {
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(8, 16, 66);
+}
+
+.avatar {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+}
+
+.avatar img {
+    border-radius: 99px;
+}
+
+.info {
+    padding-left: 30px;
+    padding-bottom: 25px;
+}
+
+.info p {
+    margin: 0;
+    padding: 2px 0;
+    font-size: 14px;
+    color: white;
+}
+
+.logOut {
+    margin-left: 5px;
+    color: rgb(0, 153, 255);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.signIn {
+    cursor: pointer;
+}

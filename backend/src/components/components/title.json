@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_titles",
+  "info": {
+    "displayName": "Title",
+    "icon": "info",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "html_id": {
+      "type": "string"
+    }
+  }
+}

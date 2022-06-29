@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "media_links_areas",
+  "info": {
+    "singularName": "media-links",
+    "pluralName": "media-links-areas",
+    "displayName": "Media Links",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MediaLinksButtons": {
+      "displayName": "Media Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.media-link",
+      "required": true
+    }
+  }
+}

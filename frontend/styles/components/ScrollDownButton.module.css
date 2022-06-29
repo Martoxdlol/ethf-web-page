@@ -1,0 +1,32 @@
+.icon {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    z-index: 2;
+    width: 70px;
+    height: 70px;
+    animation: updownwait 2.1s infinite;
+    cursor: pointer;
+}
+
+@keyframes updownwait {
+    0% {
+      transform: translateY(0);
+    }
+  
+    16% {
+      transform: translateY(8px);
+    }
+  
+    28% {
+      transform: translateY(4px);
+    }
+  
+    40% {
+      transform: translateY(8px);
+    }
+  
+    60% {
+      transform: translateY(0);
+    }
+  }

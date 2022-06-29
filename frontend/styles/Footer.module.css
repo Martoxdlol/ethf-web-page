@@ -1,0 +1,36 @@
+.footer {
+    margin-top: 50px!important;
+    font-size: 19px;
+}
+
+.footer a {
+    color: #0f79b3;
+}
+
+.footer hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .05)!important;
+    height: 0;
+    overflow: visible;
+}
+.footer h2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social figure {
+    margin: 20px 10px;
+}
+
+.social img {
+    width: 55px;
+    height: 55px;
+}

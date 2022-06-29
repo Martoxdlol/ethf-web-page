@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_components_media_links",
+  "info": {
+    "displayName": "Media Link",
+    "icon": "bullseye",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

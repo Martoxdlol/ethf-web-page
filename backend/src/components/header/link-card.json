@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_header_link_cards",
+  "info": {
+    "displayName": "Link Card",
+    "icon": "angle-double-up",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    }
+  }
+}

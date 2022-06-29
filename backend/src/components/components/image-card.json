@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_home_image_cards",
+  "info": {
+    "displayName": "Image Card",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

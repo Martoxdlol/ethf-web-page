@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_navigation_navigation_menus",
+  "info": {
+    "displayName": "NavigationMenu",
+    "icon": "ellipsis-h",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Links": {
+      "displayName": "Nav Menu Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.nav-menu-link"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.header {
+    height: 50vh;
+    background-color: gray;
+    background-position: center center;
+    background-size: cover;
+}
+
+.main {
+    padding: 0 22px;
+    margin: auto;
+    max-width: 730px;
+}
+
+@media (min-width: 1300px) {
+    .main {
+        max-width: 930px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .main {
+        max-width: 1100px;
+    }
+}
+
+.main hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+.main p {
+    font-size: 19px;
+}
+
+.relatedLinks {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0 20px;
+    position: sticky;
+    top: 70px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    max-width: 140px;
+}
+
+.relatedLinks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, .3);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-direction: column;
+}
+
+
+.overlay h1, .overlay h2, .overlay p {
+    margin: 2px 0;
+}
+
+
+.overlay h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.overlay p {
+    font-size: 18px;
+}

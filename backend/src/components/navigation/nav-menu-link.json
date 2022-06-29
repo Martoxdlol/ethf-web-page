@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_navigation_nav_menu_links",
+  "info": {
+    "displayName": "Nav Menu Link",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": false
+    },
+    "DesktopNavBarVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true,
+      "default": "#!"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank"
+      ]
+    },
+    "isSeparator": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Disabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Icon": {
+      "type": "string",
+      "default": "web_asset"
+    }
+  }
+}

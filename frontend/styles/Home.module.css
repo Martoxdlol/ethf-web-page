@@ -1,0 +1,104 @@
+.container {
+  padding: 0 1rem;
+}
+
+.background {
+  background-image: url('/portada.webp');
+  background-position: center center;
+  background-size: cover;
+
+}
+
+.header .grid {
+  margin-bottom: 30px;
+}
+
+.main {
+  border-top: 1px solid #eaeaea;
+}
+
+.main .container {
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
+  text-align: center;
+}
+
+.main .container h2 {
+  font-weight: 500;
+}
+
+.main .container h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+@media (min-width: 1000px) {}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 120px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+  .title {
+    margin: 0;
+    margin-top: 170px!important;
+    line-height: 1.15;
+    font-size: 2.5rem;
+  }
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 2.5rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+

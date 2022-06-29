@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_label_links",
+  "info": {
+    "displayName": "Label: link",
+    "icon": "arrow-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link",
+      "required": true
+    }
+  }
+}
