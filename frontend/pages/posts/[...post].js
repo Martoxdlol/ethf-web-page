@@ -63,9 +63,7 @@ export async function getStaticProps(context) {
 export default function PageRenderer(props) {
     if (!props.attributes) return <PageNotFound />
     const { URL_Name, MainContent, Title, Pretitle, Subtitle, Video_or_Image, Content, NavigationMenu, ReplaceGlobalNavigationMenu, Metadata, } = props.attributes
-
-    console.log(Video_or_Image)
-
+    
     const image = (Video_or_Image && Video_or_Image.data) ? getStrapiMedia(Video_or_Image) : null
     const alt = Video_or_Image?.data?.attributes?.alternativeText
 

@@ -10,8 +10,26 @@ import PageNotFound from "../pagina-no-encontrada"
 import ContentRenderer from "../../lib/components/ContentRenderer"
 import styles from "../../styles/post.module.css"
 import ImageCard from "../../lib/components/ImageCard"
+import Link from 'next/link'
+import LeftImageCard from "../../lib/components/LeftImageCard"
 
-export default function PageRenderer(props) {
+export async function getStaticProps() {
+    const posts = await fetchAPI('/posts', {
+        pagination: { pageSize: 10000000, page: 1, },
+        filed: ['URL_Name', 'Title', 'Subtitle', 'Video_or_Image'],
+        populate: {
+            Video_or_Image: { populate: "*" },
+        }
+    })
+
+    return {
+        props: { posts: posts.data }
+    }
+
+}
+
+export default function PostsPage({ posts }) {
+    console.log(posts)
     return <>
         <AppHead
             title={"Publicaciones"}
@@ -29,7 +47,10 @@ export default function PageRenderer(props) {
         <Container>
             {/* <ContentRenderer content={MainContent} />
             <ComponentsSection components={Content} /> */}
-            <ImageCard Title="Como crear un post"/>
+            {posts.map(({ attributes: post }) => <Link href={'/posts/' + post.URL_Name}>
+                <a><LeftImageCard title={post.Title} info={post.Subtitle} src={post.Video_or_Image?.data?.attributes?.url} /></a>
+                {/* <a><ImageCard Title={post.Title} Description={post.Subtitle} Image={post.Video_or_Image} /></a> */}
+            </Link>)}
         </Container>
         <Footer />
     </>
