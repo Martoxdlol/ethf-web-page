@@ -32,6 +32,17 @@
       "type": "component",
       "repeatable": false,
       "component": "navigation.navigation-menu"
+    },
+    "DefaultImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "SiteDescription": {
+      "type": "text"
     }
   }
 }

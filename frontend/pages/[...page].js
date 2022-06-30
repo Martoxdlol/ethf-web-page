@@ -7,6 +7,8 @@ import Header from "../lib/components/Header"
 import { getStrapiMedia } from "../lib/media"
 import Navigation from "../lib/components/Nav/Nav"
 import PageNotFound from "./pagina-no-encontrada"
+import { useContext } from "react"
+import { GlobalContext } from "./_app"
 
 export async function getStaticPaths(context) {
 
@@ -21,7 +23,7 @@ export async function getStaticPaths(context) {
 
     return {
         paths: paths,
-        fallback: 'blocking' // false or 'blocking'
+        fallback: 'blocking', // false or 'blocking'
     }
 }
 
@@ -32,6 +34,7 @@ export async function getStaticProps(context) {
             Components: { populate: "*" },
             NavigationMenu: { populate: "*" },
             Image: { populate: "*" },
+            Metadata: { populate: "*" },
         },
         pagination: {
             pageSize: 1,
@@ -45,23 +48,27 @@ export async function getStaticProps(context) {
     })
     const page = pageRes.data[0] || {}
 
-    return { props: { ...page } }
+    return {
+        props: { ...page },
+        revalidate: 30,
+    }
 }
 
 export default function PageRenderer(props) {
     if (!props.attributes) return <PageNotFound />
-    const { URL_Name, Title, Pretitle, Subtitle, Image, Components, NavigationMenu, ReplaceGlobalNavigationMenu } = props.attributes
+    const { URL_Name, Title, Pretitle, Subtitle, Image, Components, NavigationMenu, ReplaceGlobalNavigationMenu, Metadata, } = props.attributes
 
     const image = (Image && Image.data) ? getStrapiMedia(Image) : null
+    const alt = Image?.data?.attributes?.alternativeText
 
     return <>
         <AppHead
-            title={Title}
-            image={"image"}
-            description={Subtitle}
+            title={Metadata?.Title || Title}
+            image={Metadata?.Image?.data?.attributes.url || Image?.data?.attributes.url}
+            description={Metadata?.Description || Subtitle}
         />
-        <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu}/>
-        <Header title={Title} pretitle={Pretitle || ''} image={image} subtitle={Subtitle || ''} />
+        <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} />
+        <Header title={Title} pretitle={Pretitle || ''} image={image} subtitle={Subtitle || ''} alt={alt} />
         <Container>
             <ComponentsSection components={Components} />
         </Container>

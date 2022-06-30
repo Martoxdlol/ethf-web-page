@@ -2,7 +2,8 @@
   "collectionName": "components_components_multimedias",
   "info": {
     "displayName": "Multimedia",
-    "icon": "images"
+    "icon": "images",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,23 +11,39 @@
       "type": "string"
     },
     "Media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+        "videos"
+      ]
     },
-    "Wdith": {
+    "Width": {
       "type": "string"
     },
     "Height": {
       "type": "string"
     },
-    "CSS": {
-      "type": "string"
+    "ObjectFit": {
+      "type": "enumeration",
+      "enum": [
+        "cover",
+        "contain",
+        "fill",
+        "scale-down",
+        "none",
+        "inherit",
+        "initial",
+        "unset"
+      ],
+      "default": "cover",
+      "required": true
+    },
+    "AutoSlide": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

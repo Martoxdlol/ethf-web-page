@@ -1,0 +1,21 @@
+.head {
+    color: white;
+    padding-top: 130px;
+}
+
+.head h1 {
+    margin: 0;
+}
+
+.head p {
+    margin-top: 0;
+}
+
+.head .pretitle {
+    margin: 0;
+    margin-bottom: -4px;
+}
+
+.head h1, .head p, .head .pretitle {
+    text-shadow: 0 0 22px rgba(0, 0, 0, 0.33);
+}

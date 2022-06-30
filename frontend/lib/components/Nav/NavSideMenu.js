@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { GlobalContext } from '../../../pages/_app';
 import styles from '../../../styles/NavSideMenu.module.css';
 import MaterialIcon from '../MaterialIcon';
+import Separator from '../Separator';
 import ToggleMenuButton from './ToggleMenuButton';
 
 export default function NavSideMenu({ extraLinks, excludeGlobal }) {
@@ -15,7 +16,6 @@ export default function NavSideMenu({ extraLinks, excludeGlobal }) {
         return Links.map((link, i) => {
             if (link.isSeparator) {
                 return <li className={styles.separator} key={i}>
-                    <hr style={{ border: 'none', height: '1px' }} />
                     <p>{link.Name}</p>
                 </li>
             }

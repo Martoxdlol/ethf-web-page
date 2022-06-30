@@ -9,6 +9,9 @@
   "attributes": {
     "content": {
       "type": "richtext"
+    },
+    "html_id": {
+      "type": "string"
     }
   }
 }

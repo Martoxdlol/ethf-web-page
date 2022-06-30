@@ -1,0 +1,29 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.image img {
+    width: 130px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.info {
+    width: 100%;
+    padding: 11px 16px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.info h3, .info h2, .info h1, .info h4, .info h5 {
+    margin: 3px 0;
+}
+
+.info p {
+    margin: 3px 0;
+}

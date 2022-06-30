@@ -1,30 +1,44 @@
-import 'react-slideshow-image/dist/styles.css'
-import { Slide } from 'react-slideshow-image';
 import { getStrapiURL } from '../api';
+import Image from 'next/image'
+import styles from '../../styles/components/SlideShow.module.css'
+import StrapiMedia from './StrapiMedia';
+import MaterialIcon from './MaterialIcon'
+import { useLayoutEffect, useRef, useState } from 'react';
+
+export default function Slideshow({ media, objectFit, Caption, AutoSlide, width, height }) {
+    const [pos, setPos] = useState(0)
+    const maxPos = media.length - 1
+    const ref = useRef(null)
 
 
 
-export default function Slideshow({ media }) {
-    return (
-        <div className="slide-container">
-            <Slide>
-                {media.map((element, index) => {
-                    console.log(element)
-                    if (element.mime.startsWith('video')) {
-                        return <div className="each-slide" key={index}>
-                            <div style={{ height: '300px', }}>
-                                VIDEO
-                            </div>
-                        </div>
-                    }
 
-                    return <div className="each-slide" key={index}>
-                        <div style={{ 'backgroundImage': `url(${element.url})`, height: '300px', backgroundSize: '100% auto', backgroundPosition: 'center' }}>
-                            {/* <span>{slideImage.caption}</span> */}
-                        </div>
-                    </div>
-                })}
-            </Slide>
+    /* eslint-disable */
+    if (typeof window !== 'undefined') {
+        // ignore react-hooks/rules-of-hooks
+        useLayoutEffect(() => {
+            const w = ref.current?.offsetWidth
+            ref.current?.scrollTo({ left: w * pos, behavior: "smooth" })
+        }, [pos])
+    }
+    /* eslint-enable */
+
+    return <div style={{ position: 'relative', width: width, maxWidth: width }}>
+        <div className={styles.slide} ref={ref} style={{
+            height: height,
+            minHeight: height,
+            maxHeight: height,
+        }}>
+            {pos != 0 && <div className={styles.arrow_prev} onClick={() => setPos(pos - 1)}>
+                <MaterialIcon icon="arrow_back" />
+            </div>}
+            {maxPos != pos && <div className={styles.arrow_next} onClick={() => setPos(pos + 1)}>
+                <MaterialIcon icon="arrow_forward" />
+            </div>}
+            {media.map((element, i) => <div className={styles.div} key={i}>
+                <StrapiMedia src={element} style={{ objectFit: objectFit }} />
+            </div>)}
         </div>
-    )
+        {Caption && <p className={styles.caption}><i>{Caption}</i></p>}
+    </div>
 }

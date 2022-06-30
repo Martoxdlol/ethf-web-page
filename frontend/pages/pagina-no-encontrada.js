@@ -5,6 +5,10 @@ import Footer from "../lib/components/Footer/Footer";
 import Header from "../lib/components/Header";
 // import Navigation from "../lib/components/Nav/Nav";
 
+export function getStaticProps() {
+    return { props: {} }
+}
+
 export default function PageNotFound() {
     return (<>
         <AppHead title="No se encontró la página" />

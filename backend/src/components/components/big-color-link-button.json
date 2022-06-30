@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_big_color_link_buttons",
+  "info": {
+    "displayName": "Big Color Link Button",
+    "icon": "square-full",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "richtext"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    },
+    "color": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    }
+  }
+}

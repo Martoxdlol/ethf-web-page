@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_metadata_metadata",
+  "info": {
+    "displayName": "Metadata",
+    "icon": "barcode"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

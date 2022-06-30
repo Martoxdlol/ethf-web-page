@@ -27,14 +27,15 @@
     "Components": {
       "type": "dynamiczone",
       "components": [
+        "components.html",
         "components.image-card",
         "components.label-link",
+        "components.left-image-card",
+        "components.media-link",
+        "components.multimedia",
         "components.paragraph",
         "components.title",
-        "components.multimedia",
-        "components.html",
-        "components.left-image-card",
-        "components.media-link"
+        "components.big-color-link-button"
       ]
     },
     "URL_Name": {
@@ -59,6 +60,12 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "Metadata": {
+      "displayName": "Metadata",
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
     }
   }
 }

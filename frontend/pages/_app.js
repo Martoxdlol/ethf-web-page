@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <link
           rel="shortcut icon"
-          href={getStrapiMedia(global.app.attributes.favicon)}
+          href={getStrapiMedia(global?.app?.attributes?.favicon)}
         />
       </Head>
       <GlobalContext.Provider value={global}>
@@ -39,6 +39,11 @@ export async function getGlobalInitialProps(ctx) {
     fetchAPI("/global", {
       populate: {
         favicon: "*",
+        DefaultImage: {
+          populate: "*",
+        },
+        siteName: "*",
+        SiteDescription: "*",
         defaultSeo: {
           populate: "*",
         },

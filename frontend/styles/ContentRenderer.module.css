@@ -1,0 +1,16 @@
+.content {
+    overflow-x: hidden;
+}
+
+.content table {
+    border-collapse: collapse;
+}
+
+.content table {
+    border: thin solid #666;
+}
+
+.content table td {
+    border: thin solid #666;
+    padding: 1px 8px;
+}

@@ -46,7 +46,8 @@
         "components.label-link",
         "components.left-image-card",
         "components.media-link",
-        "components.multimedia"
+        "components.multimedia",
+        "components.big-color-link-button"
       ]
     }
   }
