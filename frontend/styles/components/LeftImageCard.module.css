@@ -4,9 +4,17 @@
     overflow: hidden;
     border-radius: 10px;
     border: 1px solid #eaeaea;
+    margin: 16px 0;
+
 }
 
-.image img {
+.image {
+    width: 130px;
+    overflow: hidden;
+
+}
+
+.image img, .image video {
     width: 130px;
     height: 100%;
     object-fit: cover;

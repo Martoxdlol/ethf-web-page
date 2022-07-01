@@ -19,7 +19,7 @@ export default function NavSideMenu({ extraLinks, excludeGlobal }) {
                     <p>{link.Name}</p>
                 </li>
             }
-            return <li key={i}><Link href={link.href} target={link.target}><a>{link.Icon && <MaterialIcon icon={link.Icon} />}{link.Name}</a></Link></li>
+            return <li key={i}><Link href={link.href}><a target={link.target}>{link.Icon && <MaterialIcon icon={link.Icon} />}{link.Name}</a></Link></li>
         })
 
     }

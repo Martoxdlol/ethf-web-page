@@ -14,22 +14,26 @@ import Link from 'next/link'
 import LeftImageCard from "../../lib/components/LeftImageCard"
 
 export async function getStaticProps() {
-    const posts = await fetchAPI('/posts', {
-        pagination: { pageSize: 10000000, page: 1, },
-        filed: ['URL_Name', 'Title', 'Subtitle', 'Video_or_Image'],
-        populate: {
-            Video_or_Image: { populate: "*" },
-        }
-    })
+    const [posts, pageData] = await Promise.all([
+        fetchAPI('/posts', {
+            pagination: { pageSize: 10000000, page: 1, },
+            filed: ['URL_Name', 'Title', 'Subtitle', 'Video_or_Image'],
+            populate: {
+                Video_or_Image: { populate: "*" },
+            }
+        }),
+        fetchAPI('/posts-page', {
+            // populate: "*"
+        })
+    ])
 
     return {
-        props: { posts: posts.data }
+        props: { posts: posts.data, page: pageData.data }
     }
 
 }
 
-export default function PostsPage({ posts }) {
-    console.log(posts)
+export default function PostsPage({ posts, page: { attributes: page } }) {
     return <>
         <AppHead
             title={"Publicaciones"}
@@ -40,15 +44,15 @@ export default function PostsPage({ posts }) {
         <Header color="#666">
             <Container className={styles.head}>
                 {/* <p className={styles.pretitle}></p> */}
-                <h1>Publicaciones</h1>
-                <p><b>Publicaciones creadas por alumnos y docentes de la escuela</b></p>
+                <h1>{page?.Title || ''}</h1>
+                <p><b>{page?.Subtitle || ''}</b></p>
             </Container>
         </Header>
         <Container>
             {/* <ContentRenderer content={MainContent} />
             <ComponentsSection components={Content} /> */}
             {posts.map(({ attributes: post }) => <Link href={'/posts/' + post.URL_Name}>
-                <a><LeftImageCard title={post.Title} info={post.Subtitle} src={post.Video_or_Image?.data?.attributes?.url} /></a>
+                <a><LeftImageCard title={post.Title || ''} info={post.Subtitle || ''} media={post.Video_or_Image} /></a>
                 {/* <a><ImageCard Title={post.Title} Description={post.Subtitle} Image={post.Video_or_Image} /></a> */}
             </Link>)}
         </Container>

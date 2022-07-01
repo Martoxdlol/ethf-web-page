@@ -3,10 +3,10 @@ import StrapiMedia from "./StrapiMedia";
 import styles from '../../styles/components/LeftImageCard.module.css'
 import Link from "next/link";
 
-export default function LeftImageCard({info, src, link, maxHeight, title}) {
+export default function LeftImageCard({info, media, link, maxHeight, title}) {
     const comp = <div className={styles.card} style={{maxHeight}}>
         <div className={styles.image}>
-            <StrapiMedia src={src}/>
+            <StrapiMedia src={media} muted autoPlay loop/>
         </div>
         <div className={styles.info}>
             {title && <h3>{title}</h3>}

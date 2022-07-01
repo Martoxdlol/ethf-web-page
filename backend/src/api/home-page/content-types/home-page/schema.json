@@ -39,16 +39,31 @@
     "Cards": {
       "type": "dynamiczone",
       "components": [
-        "components.image-card",
-        "components.paragraph",
-        "components.title",
+        "components.big-color-link-button",
         "components.html",
+        "components.image-card",
         "components.label-link",
         "components.left-image-card",
         "components.media-link",
         "components.multimedia",
-        "components.big-color-link-button"
+        "components.paragraph",
+        "components.title"
       ]
+    },
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "StartVideoAferTimeInMS": {
+      "type": "integer",
+      "required": false,
+      "default": 700,
+      "max": 60000,
+      "min": 0
     }
   }
 }

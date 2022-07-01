@@ -54,3 +54,23 @@
     border-color: #559beb;
     box-shadow: 0 0 0 1px #559beb;
 }
+
+@media (max-width: 600px) {
+    .with-image {
+        padding-top: 145px;
+    }
+
+    .info h3 {
+        font-size: 19px;
+    }
+    
+    .info p {
+        font-size: 16px;
+    }
+
+    .info {
+        padding: 14px 20px;
+    }
+    
+}
+

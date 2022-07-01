@@ -3,10 +3,12 @@ import styles from '../../styles/Header.module.css'
 import Separator from './Separator'
 import classNames from 'classnames'
 import Image from 'next/image'
+import StrapiMedia from './StrapiMedia'
+import { getStrapiMedia } from '../media'
 
 
-export default function Header({ image, title, subtitle, pretitle, children, color, alt }) {
-    const showheader = !!image || !!title || !!subtitle || !!pretitle
+export default function Header({ image, title, subtitle, pretitle, children, color, largeMedia }) {
+    const showheader = !!image?.data || !!title || !!subtitle || !!pretitle
 
     if (!showheader) {
         return <div style={{ backgroundColor: color }}>
@@ -16,8 +18,12 @@ export default function Header({ image, title, subtitle, pretitle, children, col
         </div>
     }
 
-    return <header className={classNames(__styles.header, styles.header)}>
-        {image && <Image src={image} alt={alt} layout='fill' objectFit='cover'></Image>}
+    const imageUrl = (image && image.data) ? getStrapiMedia(image) : null
+
+    const alt = image?.data?.attributes?.alternativeText
+
+    return <header className={classNames(__styles.header, styles.header)} style={{ maxHeight: !largeMedia && '50vh' }}>
+        <StrapiMedia src={image} layout="fill" autoPlay loop muted videoStyle={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         {showheader && <div className={__styles.overlay}>
             <p>{pretitle}</p>
             <h1>{title}</h1>

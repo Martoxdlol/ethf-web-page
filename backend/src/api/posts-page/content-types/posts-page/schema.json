@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "posts_pages",
+  "info": {
+    "singularName": "posts-page",
+    "pluralName": "posts-pages",
+    "displayName": "Posts page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    }
+  }
+}

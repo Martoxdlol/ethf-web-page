@@ -24,11 +24,11 @@
     "Content": {
       "type": "dynamiczone",
       "components": [
+        "components.big-color-link-button",
         "components.image-card",
         "components.left-image-card",
         "components.multimedia",
-        "components.paragraph",
-        "components.big-color-link-button"
+        "components.paragraph"
       ]
     },
     "Metadata": {
@@ -65,6 +65,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "LargeMedia": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

@@ -11,6 +11,7 @@ import { useContext } from "react"
 import { GlobalContext } from "../_app"
 import ContentRenderer from "../../lib/components/ContentRenderer"
 import styles from "../../styles/post.module.css"
+import Link from "next/link"
 
 export async function getStaticPaths(context) {
 
@@ -37,10 +38,12 @@ export async function getStaticProps(context) {
             Components: { populate: "*" },
             NavigationMenu: { populate: "*" },
             Image: { populate: "*" },
+            Category: { populate: "*" },
             Metadata: { populate: "*" },
             MainContent: { populate: "*" },
             Content: { populate: "*" },
             Video_or_Image: { populate: "*" },
+            LargeMedia: { populate: "*" },
         },
         pagination: {
             pageSize: 1,
@@ -62,23 +65,32 @@ export async function getStaticProps(context) {
 
 export default function PageRenderer(props) {
     if (!props.attributes) return <PageNotFound />
-    const { URL_Name, MainContent, Title, Pretitle, Subtitle, Video_or_Image, Content, NavigationMenu, ReplaceGlobalNavigationMenu, Metadata, } = props.attributes
-    
-    const image = (Video_or_Image && Video_or_Image.data) ? getStrapiMedia(Video_or_Image) : null
-    const alt = Video_or_Image?.data?.attributes?.alternativeText
+    const { URL_Name, MainContent, Title, Pretitle, Subtitle, Video_or_Image, Content, NavigationMenu, ReplaceGlobalNavigationMenu, Metadata, LargeMedia, Category } = props.attributes
 
+    const alt = Video_or_Image?.data?.attributes?.alternativeText
+    const category = Category?.data?.attributes
     return <>
         <AppHead
             title={Metadata?.Title || Title}
             image={Metadata?.Image?.data?.attributes.url || Video_or_Image?.data?.attributes.url}
             description={Metadata?.Description || Subtitle}
         />
-        <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} white />
-        <Header color="#666" image={image} alt={alt}>
+        <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} />
+        <Header color="#666" image={Video_or_Image} alt={alt} largeMedia={LargeMedia}>
             <Container className={styles.head}>
-                <p className={styles.pretitle}>{Pretitle}</p>
-                <h1>{Title}</h1>
-                <p><b>{Subtitle}</b></p>
+
+
+                <p className={styles.preTitleLinks}>
+                    {category && <><Link href={"/posts/categoria/" + category.slug}>
+                        <a>{category.name}</a></Link> | </>}
+                    <Link href="/posts"><a>Publicaciones</a>
+                    </Link>
+                </p>
+
+                <p className={styles.pretitle}>{Pretitle || ''}</p>
+                <h1>{Title || ''}</h1>
+                <p><b>{Subtitle || ''}</b></p>
+
             </Container>
         </Header>
         <Container>

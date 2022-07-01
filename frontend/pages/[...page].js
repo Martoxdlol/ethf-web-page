@@ -58,9 +58,6 @@ export default function PageRenderer(props) {
     if (!props.attributes) return <PageNotFound />
     const { URL_Name, Title, Pretitle, Subtitle, Image, Components, NavigationMenu, ReplaceGlobalNavigationMenu, Metadata, } = props.attributes
 
-    const image = (Image && Image.data) ? getStrapiMedia(Image) : null
-    const alt = Image?.data?.attributes?.alternativeText
-
     return <>
         <AppHead
             title={Metadata?.Title || Title}
@@ -68,7 +65,7 @@ export default function PageRenderer(props) {
             description={Metadata?.Description || Subtitle}
         />
         <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} />
-        <Header title={Title} pretitle={Pretitle || ''} image={image} subtitle={Subtitle || ''} alt={alt} />
+        <Header title={Title} pretitle={Pretitle || ''} image={Image} subtitle={Subtitle || ''} />
         <Container>
             <ComponentsSection components={Components} />
         </Container>

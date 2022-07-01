@@ -27,6 +27,7 @@
     "Components": {
       "type": "dynamiczone",
       "components": [
+        "components.big-color-link-button",
         "components.html",
         "components.image-card",
         "components.label-link",
@@ -34,8 +35,7 @@
         "components.media-link",
         "components.multimedia",
         "components.paragraph",
-        "components.title",
-        "components.big-color-link-button"
+        "components.title"
       ]
     },
     "URL_Name": {
@@ -48,7 +48,8 @@
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ]
     },
     "NavigationMenu": {

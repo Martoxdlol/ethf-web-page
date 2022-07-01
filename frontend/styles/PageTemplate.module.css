@@ -5,6 +5,18 @@
     background-size: cover;
 }
 
+@media (min-width: 700px) {
+    .header {
+        height: 65vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        height: 80vh;
+    }
+}
+
 .main {
     padding: 0 22px;
     margin: auto;
@@ -71,7 +83,9 @@
 }
 
 
-.overlay h1, .overlay h2, .overlay p {
+.overlay h1,
+.overlay h2,
+.overlay p {
     margin: 2px 0;
 }
 

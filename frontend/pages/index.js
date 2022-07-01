@@ -9,15 +9,18 @@ import Container from '../lib/components/Container'
 import { fetchAPI, getStrapiURL } from '../lib/api'
 import ComponentsSection from '../lib/components/ComponentsSection/ComponentsSection'
 import { getStrapiMedia } from '../lib/media'
+import { useEffect } from 'react'
 // import ContentRenderer from '../lib/components/ContentRenderer'
 
 const Home = ({ homepage }) => {
-  const { Title, Subtitle, Image, HomeLinks, Cards } = homepage.attributes
+  const { Title, Subtitle, Image, HomeLinks, Cards, Video, StartVideoAferTimeInMS } = homepage.attributes
+
   return (
     <>
       <AppHead title={Title} />
       <Navigation />
-      <Header image={getStrapiMedia(Image)}>
+      <Header image={getStrapiMedia(Image)} video={Video} videoDelay={StartVideoAferTimeInMS}>
+        <br />
         <h1 className={styles.title}>
           {Title}
         </h1>
@@ -35,6 +38,7 @@ const Home = ({ homepage }) => {
             href={Link?.href}
           />)}
         </div>
+        <br />
 
         <ScrollDownButton href={{
           hash: '#main'
@@ -43,7 +47,7 @@ const Home = ({ homepage }) => {
       <Container>
         <ComponentsSection components={Cards} />
       </Container>
-      <Footer/>
+      <Footer />
     </>
 
   )
@@ -57,6 +61,8 @@ export async function getStaticProps() {
         HomeLinks: { populate: "*" },
         Image: { populate: "*" },
         Cards: { populate: "*" },
+        StartVideoAferTimeInMS: { populate: "*" },
+        Video: { populate: "*" },
       },
     }),
   ])
