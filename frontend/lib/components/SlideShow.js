@@ -36,7 +36,7 @@ export default function Slideshow({ media, objectFit, Caption, AutoSlide, width,
                 <MaterialIcon icon="arrow_forward" />
             </div>}
             {media.map((element, i) => <div className={styles.div} key={i}>
-                <StrapiMedia src={element} style={{ objectFit: objectFit }} />
+                <StrapiMedia src={element} objectFit={objectFit} layout='fill' />
             </div>)}
         </div>
         {Caption && <p className={styles.caption}><i>{Caption}</i></p>}

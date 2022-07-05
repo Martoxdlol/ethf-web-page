@@ -57,13 +57,14 @@ const Home = ({ homepage }) => {
 export async function getStaticProps() {
   const [homePageRes, footerRes] = await Promise.all([
     await fetchAPI("/home-page", {
-      populate: {
-        HomeLinks: { populate: "*" },
-        Image: { populate: "*" },
-        Cards: { populate: "*" },
-        StartVideoAferTimeInMS: { populate: "*" },
-        Video: { populate: "*" },
-      },
+      populate: 'deep,5'
+      // populate: {
+      //   HomeLinks: { populate: "*" },
+      //   Image: { populate: "*" },
+      //   Cards: { populate: "*" },
+      //   StartVideoAferTimeInMS: { populate: "*" },
+      //   Video: { populate: "*" },
+      // },
     }),
   ])
 

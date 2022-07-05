@@ -11,7 +11,7 @@
 .image {
     width: 130px;
     overflow: hidden;
-
+    position: relative;
 }
 
 .image img, .image video {

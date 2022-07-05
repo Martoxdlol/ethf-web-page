@@ -1,9 +1,7 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import headerCardStyles from '../../styles/components/HeaderCard.module.css'
 import styles from '../../styles/components/ImageCard.module.css'
 import { getStrapiURL } from '../api'
 import classNames from 'classnames'
+import AutoLink from './AutoLink'
 
 export default function ImageCard({ Title, Description, Link: link, Image: image }) {
     const relativeUrl = image?.data?.attributes?.url
@@ -19,13 +17,10 @@ export default function ImageCard({ Title, Description, Link: link, Image: image
         </div>
     </div>
 
-    if (link?.href) {
-        return <Link href={link.href}>
-            <a target={link.target}>{c}</a>
-        </Link>
-    }
+    return <AutoLink href={link}>
+        {c}
+    </AutoLink>
 
-    return c
 }
 
 

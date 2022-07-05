@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_components_square_grid_cards",
+  "info": {
+    "displayName": "Square Grid Card",
+    "icon": "square-full",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    }
+  }
+}

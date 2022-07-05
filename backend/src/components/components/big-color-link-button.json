@@ -16,7 +16,9 @@
       "component": "navigation.link"
     },
     "color": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "default": "#008000"
     },
     "textColor": {
       "type": "string"

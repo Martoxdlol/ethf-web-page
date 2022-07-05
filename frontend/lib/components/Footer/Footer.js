@@ -1,6 +1,5 @@
 import styles from '../../../styles/Footer.module.css'
 import templateStyles from '../../../styles/components/Container.module.css'
-import Link from 'next/link'
 import Image from 'next/image'
 import ComponentsSection from '../ComponentsSection/ComponentsSection'
 import { useContext } from 'react'

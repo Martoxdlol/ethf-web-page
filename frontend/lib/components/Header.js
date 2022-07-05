@@ -7,7 +7,7 @@ import StrapiMedia from './StrapiMedia'
 import { getStrapiMedia } from '../media'
 
 
-export default function Header({ image, title, subtitle, pretitle, children, color, largeMedia }) {
+export default function Header({ image, title, subtitle, pretitle, children, color, fullMedia }) {
     const showheader = !!image?.data || !!title || !!subtitle || !!pretitle
 
     if (!showheader) {
@@ -22,8 +22,8 @@ export default function Header({ image, title, subtitle, pretitle, children, col
 
     const alt = image?.data?.attributes?.alternativeText
 
-    return <header className={classNames(__styles.header, styles.header)} style={{ maxHeight: !largeMedia && '50vh' }}>
-        <StrapiMedia src={image} layout="fill" autoPlay loop muted videoStyle={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+    return <header className={classNames(__styles.header, styles.header)} style={{ maxHeight: !fullMedia && '50vh' }}>
+        <StrapiMedia src={image} layout="fill" autoPlay loop muted backgroundBlured />
         {showheader && <div className={__styles.overlay}>
             <p>{pretitle}</p>
             <h1>{title}</h1>

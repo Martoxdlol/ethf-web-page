@@ -51,7 +51,7 @@ export default function PostsPage({ posts, page: { attributes: page } }) {
         <Container>
             {/* <ContentRenderer content={MainContent} />
             <ComponentsSection components={Content} /> */}
-            {posts.map(({ attributes: post }) => <Link href={'/posts/' + post.URL_Name}>
+            {posts.map(({ attributes: post }, i) => <Link href={'/posts/' + post.URL_Name} key={i}>
                 <a><LeftImageCard title={post.Title || ''} info={post.Subtitle || ''} media={post.Video_or_Image} /></a>
                 {/* <a><ImageCard Title={post.Title} Description={post.Subtitle} Image={post.Video_or_Image} /></a> */}
             </Link>)}

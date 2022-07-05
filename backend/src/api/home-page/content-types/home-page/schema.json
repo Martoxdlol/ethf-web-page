@@ -47,6 +47,7 @@
         "components.media-link",
         "components.multimedia",
         "components.paragraph",
+        "components.squares-grid",
         "components.title"
       ]
     },

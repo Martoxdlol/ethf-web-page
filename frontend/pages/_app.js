@@ -1,9 +1,13 @@
+import moment from "moment";
 import App from "next/app";
 import Head from "next/head";
 import { createContext } from "react";
 import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import '../styles/globals.css'
+import setLocaleTo_ES_WithData from 'moment_spanish_locale';
+
+setLocaleTo_ES_WithData(moment)
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});

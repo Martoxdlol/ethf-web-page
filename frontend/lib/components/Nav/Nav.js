@@ -6,6 +6,7 @@ import { useContext, useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import { GlobalContext } from "../../../pages/_app";
 import styles from '../../../styles/Nav.module.css';
 import useScrollPosition from "../../hooks/useScrollPosition";
+import AutoLink from "../AutoLink";
 import MaterialIcon from "../MaterialIcon";
 import NavSideMenu from "./NavSideMenu";
 import ToggleMenuButton from "./ToggleMenuButton";
@@ -57,7 +58,7 @@ export default function Navigation({ white, extraLinks, excludeGlobal }) {
         {/* Normal desktop menu */}
         <ul className={styles.ul}>
           {filteredLinks.map((link, i) => <li key={i} className={styles.li}>
-            <Link href={link.href} target={link.target}>{link.Name}</Link>
+            <AutoLink href={link}>{link.Name}</AutoLink>
           </li>)}
         </ul>
         <ul className={styles.icon}>

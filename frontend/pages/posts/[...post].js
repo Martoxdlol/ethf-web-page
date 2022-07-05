@@ -12,6 +12,7 @@ import { GlobalContext } from "../_app"
 import ContentRenderer from "../../lib/components/ContentRenderer"
 import styles from "../../styles/post.module.css"
 import Link from "next/link"
+import moment from 'moment'
 
 export async function getStaticPaths(context) {
 
@@ -43,7 +44,9 @@ export async function getStaticProps(context) {
             MainContent: { populate: "*" },
             Content: { populate: "*" },
             Video_or_Image: { populate: "*" },
-            LargeMedia: { populate: "*" },
+            FullMedia: { populate: "*" },
+            CreationDate: { populate: "*" },
+            Author: { populate: "*" },
         },
         pagination: {
             pageSize: 1,
@@ -65,10 +68,32 @@ export async function getStaticProps(context) {
 
 export default function PageRenderer(props) {
     if (!props.attributes) return <PageNotFound />
-    const { URL_Name, MainContent, Title, Pretitle, Subtitle, Video_or_Image, Content, NavigationMenu, ReplaceGlobalNavigationMenu, Metadata, LargeMedia, Category } = props.attributes
+    const { URL_Name,
+        MainContent,
+        Title,
+        Pretitle,
+        Subtitle,
+        Video_or_Image,
+        Content,
+        NavigationMenu,
+        ReplaceGlobalNavigationMenu,
+        Metadata,
+        FullMedia,
+        Category,
+        CreationDate,
+        LastUpdated,
+        createdAt,
+        updatedAt,
+        Author
+    } = props.attributes
 
     const alt = Video_or_Image?.data?.attributes?.alternativeText
     const category = Category?.data?.attributes
+
+    const mediaURL = Video_or_Image?.data?.attributes?.url
+    const mediaIsVideo = Video_or_Image?.data?.attributes?.mime.startsWith('video')
+    const mediaIsImage = Video_or_Image?.data?.attributes?.mime.startsWith('image')
+
     return <>
         <AppHead
             title={Metadata?.Title || Title}
@@ -76,27 +101,86 @@ export default function PageRenderer(props) {
             description={Metadata?.Description || Subtitle}
         />
         <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} />
-        <Header color="#666" image={Video_or_Image} alt={alt} largeMedia={LargeMedia}>
-            <Container className={styles.head}>
+        <article>
+            <Header color="#666" image={Video_or_Image} alt={alt} fullMedia={FullMedia}>
+                <Container className={styles.head}>
 
 
-                <p className={styles.preTitleLinks}>
-                    {category && <><Link href={"/posts/categoria/" + category.slug}>
-                        <a>{category.name}</a></Link> | </>}
-                    <Link href="/posts"><a>Publicaciones</a>
-                    </Link>
+                    <p className={styles.preTitleLinks}>
+                        {category && <><Link href={"/posts/categoria/" + category.slug}>
+                            <a>{category.name}</a></Link> | </>}
+                        <Link href="/posts"><a>Publicaciones</a>
+                        </Link>
+                    </p>
+
+                    <p className={styles.pretitle}>{Pretitle || ''}</p>
+                    <h1>{Title || ''}</h1>
+                    <p><b>{Subtitle || ''}</b></p>
+
+                </Container>
+            </Header>
+            <Container>
+                <p className={styles.dateIndicator}>
+                    <i>
+                        {CreationDate && <time datetime={CreationDate}>
+                            {moment(CreationDate, 'YYYY-MM-DD').format('D [de] MMMM [de] YYYY').toLocaleLowerCase()}
+                        </time>}
+                        {(Author && CreationDate) && " - "}
+                        {Author}
+                    </i>
                 </p>
-
-                <p className={styles.pretitle}>{Pretitle || ''}</p>
-                <h1>{Title || ''}</h1>
-                <p><b>{Subtitle || ''}</b></p>
-
+                <ContentRenderer content={MainContent} />
+                <ComponentsSection components={Content} />
             </Container>
-        </Header>
-        <Container>
-            <ContentRenderer content={MainContent} />
-            <ComponentsSection components={Content} />
-        </Container>
+            <script type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "http://schema.org",
+                        "@type": "BlogPosting",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "https://www.henryford.edu.ar/posts/" + URL_Name,
+                        },
+                        "headline": Title,
+                        ...mediaIsImage ? {
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": mediaURL,
+                                // "height": 463,
+                                // "width": 700
+                            }
+                        } : {},
+                        ...mediaIsVideo ? {
+                            "video": {
+                                "@type": "VideoObject",
+                                "url": mediaURL,
+                                // "height": 463,
+                                // "width": 700
+                            }
+                        } : {},
+                        "datePublished": CreationDate || createdAt,
+                        "dateModified": LastUpdated || updatedAt,
+                        "author": {
+                            "@type": "Person",
+                            "name": "Person’s Name"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": Author || 'Escuela Técnica Henry Ford',
+                            // "logo": {
+                            //     "@type": "ImageObject",
+                            //     "url": "http://applefostering.co.uk/apple-logo-schema/",
+                            //     "width": 550,
+                            //     "height": 60
+                            // }
+                        },
+                        "description": Subtitle,
+                        "articleBody": MainContent,
+                        "articleSection": category,
+                    })
+                }}>
+            </script>
+        </article>
         <Footer />
     </>
 }

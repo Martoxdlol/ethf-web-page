@@ -2,12 +2,15 @@
   "collectionName": "components_navigation_links",
   "info": {
     "displayName": "Link",
-    "icon": "angle-right"
+    "icon": "angle-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "href": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "default": "#!"
     },
     "label": {
       "type": "string"
@@ -19,7 +22,9 @@
       ]
     },
     "isExternal": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }

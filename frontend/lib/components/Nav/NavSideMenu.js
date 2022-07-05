@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import AutoLink from '../AutoLink';
 import { useContext } from 'react';
 import { GlobalContext } from '../../../pages/_app';
 import styles from '../../../styles/NavSideMenu.module.css';
@@ -19,7 +19,7 @@ export default function NavSideMenu({ extraLinks, excludeGlobal }) {
                     <p>{link.Name}</p>
                 </li>
             }
-            return <li key={i}><Link href={link.href}><a target={link.target}>{link.Icon && <MaterialIcon icon={link.Icon} />}{link.Name}</a></Link></li>
+            return <li key={i}><AutoLink href={link}>{link.Icon && <MaterialIcon icon={link.Icon} />}{link.Name}</AutoLink></li>
         })
 
     }

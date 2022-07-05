@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_squares_grids",
+  "info": {
+    "displayName": "Squares Grid",
+    "icon": "clone",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SquareCards": {
+      "displayName": "Square Grid Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.square-grid-card"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    }
+  }
+}
