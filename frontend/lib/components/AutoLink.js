@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function AutoLink({ href, children, ...fullProps }) {
+export default function AutoLink({ href, children, className, linkProps, ...fullProps }) {
     if (!href) return children
 
     let hrefUrl = null
@@ -23,7 +23,7 @@ export default function AutoLink({ href, children, ...fullProps }) {
     if(attributes.label) props.title = attributes.label
     if(attributes.isExternal) props.rel = 'nofollow noopener noreferrer'
 
-    return <Link href={hrefUrl} {...fullProps}>
-        <a {...props}>{children}</a>
+    return <Link href={hrefUrl} {...linkProps}>
+        <a {...props} {...fullProps} className={className}>{children}</a>
     </Link>
 }

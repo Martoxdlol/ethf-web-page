@@ -36,7 +36,8 @@
         "components.multimedia",
         "components.paragraph",
         "components.title",
-        "components.squares-grid"
+        "components.squares-grid",
+        "components.files-card"
       ]
     },
     "URL_Name": {

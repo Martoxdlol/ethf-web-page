@@ -7,12 +7,13 @@ import Navigation from "../../../lib/components/Nav/Nav"
 import styles from "../../../styles/post.module.css"
 import Link from "next/link"
 import LeftImageCard from "../../../lib/components/LeftImageCard"
+import MaterialIcon from "../../../lib/components/MaterialIcon"
 
 export async function getStaticPaths(context) {
 
     const categories = await fetchAPI('/categories', {
         pagination: { pageSize: 10000000, page: 1, },
-        filed: ['URL_Name']
+        field: ['URL_Name']
     })
 
     const paths = categories.data.map(category => {
@@ -29,6 +30,7 @@ export async function getStaticProps(context) {
     const slug = context.params.category.join('/')
 
     const category = await fetchAPI('/categories', {
+        populate: 'deep,3',
         filters: {
             slug: {
                 $eq: slug
@@ -40,24 +42,11 @@ export async function getStaticProps(context) {
         },
     })
 
-    const categoryId = category.data[0].id
-    console.log(categoryId)
 
-    const [posts] = await Promise.all([
-        fetchAPI('/posts', {
-            pagination: { pageSize: 10000000, page: 1, },
-            filed: ['URL_Name', 'Title', 'Subtitle', 'Video_or_Image'],
-            populate: {
-                Video_or_Image: { populate: "*" },
-            },
-            filters: {
-                Category: categoryId,
-            }
-        })
-    ])
+    const posts = category?.data[0]?.attributes?.posts?.data
 
     return {
-        props: { posts: posts.data, category: category.data[0] || { attributes: null } }
+        props: { posts: posts, category: category.data[0] || { attributes: null } }
     }
 
 }
@@ -70,10 +59,12 @@ export default function PostsPage({ posts, category: { attributes: category } })
             description={"Noticias, eventos, artículos, y publicaciones"}
         />
         <Navigation white />
-        <Header color="#666">
+        <Header color="#666" image={category.media}>
             <Container className={styles.head}>
                 {/* <p className={styles.pretitle}></p> */}
-                <h1>{category?.name || ''}</h1>
+                <h1>
+                    <Link href={'../'}><a className={styles.back}><MaterialIcon icon='arrow_back' /></a></Link>
+                    {category?.name || ''}</h1>
                 {/* <p><b>{category?.Subtitle || ''}</b></p> */}
             </Container>
         </Header>

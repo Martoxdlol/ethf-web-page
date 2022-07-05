@@ -48,7 +48,8 @@
         "components.multimedia",
         "components.paragraph",
         "components.squares-grid",
-        "components.title"
+        "components.title",
+        "components.files-card"
       ]
     },
     "Video": {

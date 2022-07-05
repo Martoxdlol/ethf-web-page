@@ -1,6 +1,7 @@
 .head {
     color: white;
     padding-top: 30px;
+    text-align: left;
 }
 
 .head h1 {
@@ -37,4 +38,13 @@
 .dateIndicator {
     margin: 0;
     margin-top: 6px;
+}
+
+.back {
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.back:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }

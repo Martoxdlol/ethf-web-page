@@ -1,6 +1,7 @@
 .footer {
     margin-top: 50px!important;
     font-size: 19px;
+    overflow: hidden;
 }
 
 .footer a {

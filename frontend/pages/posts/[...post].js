@@ -47,6 +47,7 @@ export async function getStaticProps(context) {
             FullMedia: { populate: "*" },
             CreationDate: { populate: "*" },
             Author: { populate: "*" },
+            categories: { populate: "*" },
         },
         pagination: {
             pageSize: 1,
@@ -79,16 +80,17 @@ export default function PageRenderer(props) {
         ReplaceGlobalNavigationMenu,
         Metadata,
         FullMedia,
-        Category,
         CreationDate,
         LastUpdated,
         createdAt,
         updatedAt,
-        Author
+        Author,
+        categories,
     } = props.attributes
 
     const alt = Video_or_Image?.data?.attributes?.alternativeText
-    const category = Category?.data?.attributes
+
+    const categoriesList = categories?.data
 
     const mediaURL = Video_or_Image?.data?.attributes?.url
     const mediaIsVideo = Video_or_Image?.data?.attributes?.mime.startsWith('video')
@@ -107,8 +109,10 @@ export default function PageRenderer(props) {
 
 
                     <p className={styles.preTitleLinks}>
-                        {category && <><Link href={"/posts/categoria/" + category.slug}>
-                            <a>{category.name}</a></Link> | </>}
+                        {categoriesList?.length && categoriesList.map((category, i) => <><Link href={"/posts/categoria/" + category.attributes.slug}>
+                            <a>{category.attributes.name}</a>
+                        </Link> | </>
+                        )}
                         <Link href="/posts"><a>Publicaciones</a>
                         </Link>
                     </p>
@@ -122,7 +126,7 @@ export default function PageRenderer(props) {
             <Container>
                 <p className={styles.dateIndicator}>
                     <i>
-                        {CreationDate && <time datetime={CreationDate}>
+                        {CreationDate && <time dateTime={CreationDate}>
                             {moment(CreationDate, 'YYYY-MM-DD').format('D [de] MMMM [de] YYYY').toLocaleLowerCase()}
                         </time>}
                         {(Author && CreationDate) && " - "}
@@ -176,7 +180,7 @@ export default function PageRenderer(props) {
                         },
                         "description": Subtitle,
                         "articleBody": MainContent,
-                        "articleSection": category,
+                        "articleSection": categoriesList[0]?.attributes.name,
                     })
                 }}>
             </script>

@@ -4,6 +4,7 @@ import Slideshow from '../SlideShow'
 import LeftImageCard from '../LeftImageCard'
 import SquaresGrid from '../SquaresGrid'
 import AutoLink from '../AutoLink'
+import FilesCard from '../FilesCard'
 
 function SectionTitle({ content, html_id }) {
     return <h2 style={{ textAlign: 'center', fontWeight: '500' }} className="scroll-to-section" id={html_id}>{content}</h2>
@@ -61,6 +62,8 @@ function BigColorLinkButton({ Label, Link: link, color, textColor }) {
 }
 BigColorLinkButton.__component = 'components.big-color-link-button'
 
+
+
 const components = [
     ImageCard,
     SectionTitle,
@@ -70,7 +73,8 @@ const components = [
     Multimedia,
     LeftImageCardComp,
     BigColorLinkButton,
-    SquaresGrid
+    SquaresGrid,
+    FilesCard,
 ]
 
 export default function DynamicComponentSelector({ component }) {

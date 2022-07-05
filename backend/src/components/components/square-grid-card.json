@@ -23,6 +23,15 @@
       "type": "component",
       "repeatable": false,
       "component": "navigation.link"
+    },
+    "DoubleWidth": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Hide": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

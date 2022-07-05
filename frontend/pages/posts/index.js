@@ -1,39 +1,31 @@
 import { fetchAPI } from "../../lib/api"
 import AppHead from "../../lib/components/AppHead"
 import Container from "../../lib/components/Container"
-import ComponentsSection from '../../lib/components/ComponentsSection/ComponentsSection'
 import Footer from "../../lib/components/Footer/Footer"
 import Header from "../../lib/components/Header"
-import { getStrapiMedia } from "../../lib/media"
+import SquaresGrid from "../../lib/components/SquaresGrid"
 import Navigation from "../../lib/components/Nav/Nav"
-import PageNotFound from "../pagina-no-encontrada"
-import ContentRenderer from "../../lib/components/ContentRenderer"
 import styles from "../../styles/post.module.css"
-import ImageCard from "../../lib/components/ImageCard"
-import Link from 'next/link'
-import LeftImageCard from "../../lib/components/LeftImageCard"
+
 
 export async function getStaticProps() {
-    const [posts, pageData] = await Promise.all([
-        fetchAPI('/posts', {
-            pagination: { pageSize: 10000000, page: 1, },
-            filed: ['URL_Name', 'Title', 'Subtitle', 'Video_or_Image'],
-            populate: {
-                Video_or_Image: { populate: "*" },
-            }
+    const [categories, pageData] = await Promise.all([
+        fetchAPI('/categories', {
+            populate: 'deep,2'
         }),
         fetchAPI('/posts-page', {
-            // populate: "*"
+            populate: 'deep,5'
         })
     ])
 
+
     return {
-        props: { posts: posts.data, page: pageData.data }
+        props: { categories: categories.data, page: pageData.data }
     }
 
 }
 
-export default function PostsPage({ posts, page: { attributes: page } }) {
+export default function PostsPage({ categories, page: { attributes: page } }) {
     return <>
         <AppHead
             title={"Publicaciones"}
@@ -49,12 +41,14 @@ export default function PostsPage({ posts, page: { attributes: page } }) {
             </Container>
         </Header>
         <Container>
-            {/* <ContentRenderer content={MainContent} />
-            <ComponentsSection components={Content} /> */}
-            {posts.map(({ attributes: post }, i) => <Link href={'/posts/' + post.URL_Name} key={i}>
-                <a><LeftImageCard title={post.Title || ''} info={post.Subtitle || ''} media={post.Video_or_Image} /></a>
-                {/* <a><ImageCard Title={post.Title} Description={post.Subtitle} Image={post.Video_or_Image} /></a> */}
-            </Link>)}
+            {categories?.map(category => category.attributes.name)}
+            <SquaresGrid SquareCards={categories?.map(category => {
+                return {
+                    Title: category.attributes.name,
+                    Media: category.attributes.media,
+                    Link: `/posts/categoria/${category.attributes.slug}`
+                }
+            }) || []} />
         </Container>
         <Footer />
     </>

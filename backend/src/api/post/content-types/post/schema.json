@@ -28,7 +28,9 @@
         "components.image-card",
         "components.left-image-card",
         "components.multimedia",
-        "components.paragraph"
+        "components.paragraph",
+        "components.squares-grid",
+        "components.files-card"
       ]
     },
     "Metadata": {
@@ -61,15 +63,16 @@
     "MainContent": {
       "type": "richtext"
     },
-    "Category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
-    },
     "FullMedia": {
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "posts"
     }
   }
 }
