@@ -10,8 +10,8 @@ RUN mkdir backend
 RUN mkdir frontend
 
 COPY package*.json ./
-COPY frontend/package*.json ./frontend
-COPY backend/package*.json ./backend
+COPY frontend/package*.json ./frontend/
+COPY backend/package*.json ./backend/
 
 RUN npm install
 RUN cd /usr/src/app/backend && npm install 
