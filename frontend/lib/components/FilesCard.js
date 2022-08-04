@@ -4,7 +4,7 @@ import MaterialIcon from "./MaterialIcon"
 
 export default function FilesCard({ Files: { data: Files } }) {
     return <div className={styles.card}>
-        {Files.map(file => <AutoLink href={file.attributes.url} download={file.attributes.name} target="_blank"><div className={styles.file}>
+        {Files.map((file, i) => <AutoLink key={i} href={file.attributes.url} download={file.attributes.name} target="_blank"><div className={styles.file}>
             <MaterialIcon icon="insert_drive_file" color="black" />
             <p>{file.attributes.name}</p>
             <MaterialIcon icon="download" color="black" />

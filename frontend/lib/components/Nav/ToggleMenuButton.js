@@ -14,7 +14,7 @@ export default function ToggleMenuButton({ children }) {
             delete q.menu
         }
         return q
-    }, [isOpen])
+    }, [isOpen, router.query])
 
     return <Link href={{
         pathname: router.pathname,

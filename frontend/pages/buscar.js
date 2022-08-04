@@ -115,7 +115,7 @@ export default function PostsPage({ searchResults: _searchResults, searchTerm: _
                 <SearchForm />
                 {searchTerm === null ? <>
                 </> : <>
-                    {searchResults?.length === 0 ? <h2>No se encontraron resultados</h2> : <h2>Resultados de búsqueda de "{searchTerm}"</h2>}
+                    {searchResults?.length === 0 ? <h2>No se encontraron resultados</h2> : <h2>Resultados de búsqueda de &quot;{searchTerm}&quot;</h2>}
                     {searchResults === null ? <p>Buscando...</p> : <LinkList links={searchResults} />}
                 </>}
 

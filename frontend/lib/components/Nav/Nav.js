@@ -46,7 +46,7 @@ export default function Navigation({ white, extraLinks, excludeGlobal }) {
       l.push(...extraLinks)
     }
     return l.filter(link => !link.isSeparator && link.DesktopNavBarVisible)
-  })
+  }, [Links, extraLinks, excludeGlobal])
 
   return (
     <>
