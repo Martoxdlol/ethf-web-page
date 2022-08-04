@@ -16,6 +16,7 @@ RUN npm install
 COPY . .
 
 ENV NODE_ENV=production
+ENV DATABASE_FILENAME=./db/data.db
 
 RUN npm run build
 
