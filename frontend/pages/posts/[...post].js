@@ -118,7 +118,7 @@ export default function PageRenderer(props) {
                     </p>
 
                     <p className={styles.pretitle}>{Pretitle || ''}</p>
-                    <h1>{Title || ''}</h1>
+                    <h1 className={styles.title}>{Title || ''}</h1>
                     <p><b>{Subtitle || ''}</b></p>
 
                 </Container>

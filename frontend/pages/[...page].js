@@ -30,12 +30,7 @@ export async function getStaticPaths(context) {
 export async function getStaticProps(context) {
     const path = context.params.page.join('/')
     const pageRes = await fetchAPI('/pages', {
-        populate: {
-            Components: { populate: "*" },
-            NavigationMenu: { populate: "*" },
-            Image: { populate: "*" },
-            Metadata: { populate: "*" },
-        },
+        populate: 'deep,4',
         pagination: {
             pageSize: 1,
             page: 1,

@@ -5,15 +5,15 @@ import styles from '../../styles/ContentRenderer.module.css'
 
 export default function ContentRenderer({ content, css }) {
     const ref = useRef(null)
-    
+
     const router = useRouter()
 
     /* eslint-disable */
-    if(typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
         useLayoutEffect(() => {
-            if(ref.current) {
+            if (ref.current) {
                 const links = ref.current.querySelectorAll('a')
-                for(const link of Array.from(links)) {
+                for (const link of Array.from(links)) {
                     link.addEventListener('click', (e) => {
                         e.preventDefault()
                         router.push(link.href)
@@ -24,7 +24,9 @@ export default function ContentRenderer({ content, css }) {
     }
     /* eslint-enable */
 
-    return <div className={styles.content} ref={ref}>
+
+
+    return <div className={styles.content + ' ' + '__HTML_CONTENT__'} ref={ref}>
         <div
             dangerouslySetInnerHTML={{ __html: '<style>' + (css ?? '') + '</style>' + content }}
             onClick={(e) => {

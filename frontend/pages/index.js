@@ -35,7 +35,7 @@ const Home = ({ homepage }) => {
             key={i}
             title={Title}
             description={Description}
-            href={Link?.href}
+            href={Link}
           />)}
         </div>
         <br />

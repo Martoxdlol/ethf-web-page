@@ -8,6 +8,11 @@ import styles from "../../../styles/post.module.css"
 import Link from "next/link"
 import LeftImageCard from "../../../lib/components/LeftImageCard"
 import MaterialIcon from "../../../lib/components/MaterialIcon"
+import SquaresGrid from "../../../lib/components/SquaresGrid"
+import StrapiMedia from "../../../lib/components/StrapiMedia"
+import SizedView from "../../../lib/components/SizedView"
+import AutoLink from "../../../lib/components/AutoLink"
+import LinkList from "../../../lib/components/LinkList"
 
 export async function getStaticPaths(context) {
 
@@ -63,18 +68,33 @@ export default function PostsPage({ posts, category: { attributes: category } })
             <Container className={styles.head}>
                 {/* <p className={styles.pretitle}></p> */}
                 <h1>
-                    <Link href={'../'}><a className={styles.back}><MaterialIcon icon='arrow_back' /></a></Link>
+                    <Link href={'../'}><a className={styles.back}><MaterialIcon icon='arrow_back' color="white" /></a></Link>
                     {category?.name || ''}</h1>
                 {/* <p><b>{category?.Subtitle || ''}</b></p> */}
             </Container>
         </Header>
         <Container>
-            {/* <ContentRenderer content={MainContent} />
-            <ComponentsSection components={Content} /> */}
-            {posts.map(({ attributes: post }, i) => <Link href={'/posts/' + post.URL_Name} key={i}>
-                <a><LeftImageCard title={post.Title || ''} info={post.Subtitle || ''} media={post.Video_or_Image} /></a>
-                {/* <a><ImageCard Title={post.Title} Description={post.Subtitle} Image={post.Video_or_Image} /></a> */}
-            </Link>)}
+            <h2>Lista de publicaciones</h2>
+            <div>
+                <LinkList
+                    links={posts?.map(post => {
+                        return {
+                            title: post.attributes.Title,
+                            media: post.attributes.Video_or_Image,
+                            description: post.attributes.Subtitle,
+                            url: `/posts/${post.attributes.URL_Name}`
+                        }
+                    })}
+                />
+            </div>
+            {/* 
+            <SquaresGrid SquareCards={posts?.map(post => {
+                return {
+                    Title: post.attributes.Title,
+                    Media: post.attributes.Video_or_Image,
+                    Link: `/posts/${post.attributes.URL_Name}`,
+                }
+            }) || []} /> */}
         </Container>
         <Footer />
     </>

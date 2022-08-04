@@ -9,6 +9,7 @@
     display: flex;
     justify-content: flex-end;
     flex-wrap: nowrap;
+    height: 48px;
 }
 
 .white.nav {

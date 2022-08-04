@@ -5,6 +5,9 @@ import LeftImageCard from '../LeftImageCard'
 import SquaresGrid from '../SquaresGrid'
 import AutoLink from '../AutoLink'
 import FilesCard from '../FilesCard'
+import AspectRatio from '../../../styles/components/AspectRatio'
+import SizedView from '../SizedView'
+import LinkList from '../LinkList'
 
 function SectionTitle({ content, html_id }) {
     return <h2 style={{ textAlign: 'center', fontWeight: '500' }} className="scroll-to-section" id={html_id}>{content}</h2>
@@ -62,7 +65,26 @@ function BigColorLinkButton({ Label, Link: link, color, textColor }) {
 }
 BigColorLinkButton.__component = 'components.big-color-link-button'
 
+function IframeView({ src, width, height }) {
+    return <SizedView width={width} height={height}>
+        <iframe src={src} style={{ border: '0', width: '100%', height: '100%' }}></iframe>
+    </SizedView>
+}
 
+IframeView.__component = 'components.iframe'
+
+function LinkListComp({ links }) {
+    return <LinkList links={links.map(link => {
+        return {
+            title: link.Title,
+            media: link.Media,
+            description: link.Description,
+            url: link.Link,
+        }
+    })} />
+}
+
+LinkListComp.__component = 'components.link-list'
 
 const components = [
     ImageCard,
@@ -75,6 +97,8 @@ const components = [
     BigColorLinkButton,
     SquaresGrid,
     FilesCard,
+    IframeView,
+    LinkListComp,
 ]
 
 export default function DynamicComponentSelector({ component }) {

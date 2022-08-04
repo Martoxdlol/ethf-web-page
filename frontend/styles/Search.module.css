@@ -1,0 +1,38 @@
+.search .form {
+    display: flex;
+}
+
+.search .text {
+    width: 100%;
+    border: 0;
+    background-color: #eaeaea;
+    display: block;
+    outline: none;
+    border-radius: 0px;
+    padding: 8px 20px;
+    font-size: 18px;
+}
+
+.search .submit {
+    background-color: var(--ethf-blue);
+    border: 0;
+    color: white;
+    padding: 8px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.search .text::placeholder {
+    font-size: 18px;
+}
+
+.search .text:focus {
+    border-bottom: 2px solid var(--ethf-blue);
+    padding-bottom: 6px;
+}
+
+.search h1,
+.search h2 {
+    font-weight: 500;
+}

@@ -1,13 +1,27 @@
-.big-btn, .block-btn {
-    margin: 16px 0;
-    padding: 30px 0px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: white !important;
-    background-color: #17a2b8;
-    display: block;
-    font-weight: 800;
+.__HTML_CONTENT__ hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
 }
 
+.__HTML_CONTENT__ ul {
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+}
+
+.__HTML_CONTENT__ ul ul {
+    border: none;
+}
+
+.__HTML_CONTENT__ h1,
+.__HTML_CONTENT__ h2,
+.__HTML_CONTENT__ h3,
+.__HTML_CONTENT__ h4,
+.__HTML_CONTENT__ h5,
+.__HTML_CONTENT__ h6 {
+    font-weight: 500;
+}

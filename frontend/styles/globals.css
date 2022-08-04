@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: var(--blue);
+  color: var(--ethf-blue);
   text-decoration: none;
 }
 

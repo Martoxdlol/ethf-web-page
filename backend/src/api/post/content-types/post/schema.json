@@ -4,7 +4,7 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post",
+    "displayName": "Publicaciones",
     "description": ""
   },
   "options": {
@@ -30,7 +30,9 @@
         "components.multimedia",
         "components.paragraph",
         "components.squares-grid",
-        "components.files-card"
+        "components.files-card",
+        "components.iframe",
+        "components.link-list"
       ]
     },
     "Metadata": {

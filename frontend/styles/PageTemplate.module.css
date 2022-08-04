@@ -1,4 +1,5 @@
 .header {
+    min-height: 310px;
     height: 50vh;
     background-color: gray;
     background-position: center center;

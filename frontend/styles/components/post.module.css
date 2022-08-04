@@ -1,0 +1,45 @@
+.categoryPostCard img {
+    object-fit: cover;
+}
+
+.categoryPostCard {
+    width: 100%;
+    display: flex;
+    padding: 10px 10px;
+}
+
+.categoryPostCard.border:nth-child(1) {
+    margin-top: 10px;
+    border-bottom: 1px solid #DDD;
+    border-top: 1px solid #DDD;
+}
+
+.categoryPostCard.border {
+    border-bottom: 1px solid #DDD;
+    padding: 0;
+    width: 100%;
+}
+
+.categoryPostCard a{
+    width: 100%;
+}
+
+.categoryPostCard .info {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.categoryPostCard .info p {
+    margin: 0;
+    color: #333;
+}
+
+.categoryPostCard h3 {
+    color: green;
+    font-weight: 500;
+    margin: 0;
+}
+
+.categoryPostCard:hover {
+    background-color: #eaeaea;
+}

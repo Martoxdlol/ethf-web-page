@@ -62,6 +62,9 @@ export default function Navigation({ white, extraLinks, excludeGlobal }) {
           </li>)}
         </ul>
         <ul className={styles.icon}>
+          <Link href="/buscar"><a><MaterialIcon icon="search" /></a></Link>
+        </ul>
+        <ul className={styles.icon}>
           <ToggleMenuButton><a><MaterialIcon icon="menu" /></a></ToggleMenuButton>
         </ul>
       </nav>

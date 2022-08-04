@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_link_lists",
+  "info": {
+    "displayName": "LinkList",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "displayName": "LinkListLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link-list-link"
+    }
+  }
+}

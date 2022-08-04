@@ -15,7 +15,7 @@ export default function PageNotFound() {
         {/* <Navigation /> */}
         <Header title="Página no encontrada" subtitle="Error 404" />
         <Container>
-            <h1>La página no existe o no se puede encontrar mas con este link</h1>
+            <h1>La página no existe o no se puede encontrar más con este link</h1>
             <Link href="/"><a style={{ padding: '10px', textAlign: 'center', color: 'white', backgroundColor: '#666', display: 'block' }}>Volver a inicio</a></Link>
         </Container>
         <Footer />

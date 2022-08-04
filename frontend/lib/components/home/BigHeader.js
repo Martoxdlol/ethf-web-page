@@ -3,7 +3,7 @@ import StrapiMedia from '../StrapiMedia'
 import { useEffect, useRef, useState } from 'react'
 
 export default function BigHeader({ children, image, video, videoDelay }) {
-    const ref = useRef(null)
+    const videoRef = useRef(null)
     const [showVideo, setShowVideo] = useState(false)
     // $0.play().then(() => alert())
 
@@ -11,14 +11,14 @@ export default function BigHeader({ children, image, video, videoDelay }) {
         if (!video) return
 
         const timer = setTimeout(() => {
-            ref.current?.play().then(() => {
+            videoRef.current?.play().then(() => {
                 setShowVideo(true)
                 // ref.current.pause
             })
         }, videoDelay ?? 700)
 
         function scrollListener(e) {
-            ref.current && (ref.current.style.marginTop = `${window.pageYOffset}px`)
+            videoRef.current && (videoRef.current.style.marginTop = `${window.pageYOffset}px`)
         }
 
         window.addEventListener('scroll', scrollListener)
@@ -32,7 +32,7 @@ export default function BigHeader({ children, image, video, videoDelay }) {
     return (
         <div className={styles.background} style={{ backgroundImage: 'url("' + image + '")' }}>
             {video && <div className={styles.video} style={{ opacity: showVideo ? 1 : 0, transition: '1s' }}>
-                <StrapiMedia src={video} muted loop useRef={ref} />
+                <StrapiMedia src={video} muted loop useRef={videoRef} />
             </div>}
             <header className={styles.header}>
                 {children}

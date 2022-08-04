@@ -49,7 +49,9 @@
         "components.paragraph",
         "components.squares-grid",
         "components.title",
-        "components.files-card"
+        "components.files-card",
+        "components.iframe",
+        "components.link-list"
       ]
     },
     "Video": {

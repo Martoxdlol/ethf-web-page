@@ -4,7 +4,7 @@
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "Page",
+    "displayName": "Páginas",
     "description": ""
   },
   "options": {
@@ -28,16 +28,18 @@
       "type": "dynamiczone",
       "components": [
         "components.big-color-link-button",
+        "components.files-card",
         "components.html",
+        "components.iframe",
         "components.image-card",
         "components.label-link",
         "components.left-image-card",
         "components.media-link",
         "components.multimedia",
         "components.paragraph",
-        "components.title",
         "components.squares-grid",
-        "components.files-card"
+        "components.title",
+        "components.link-list"
       ]
     },
     "URL_Name": {

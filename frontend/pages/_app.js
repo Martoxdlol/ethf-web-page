@@ -38,6 +38,8 @@ const MyApp = ({ Component, pageProps }) => {
 export async function getGlobalInitialProps(ctx) {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
+  const initialProps = appProps?.pageProps?.props
+
   // Fetch global site settings from Strapi
   const [globalRes, footerRes, mediaLinksRes] = await Promise.all([
     fetchAPI("/global", {
@@ -69,7 +71,7 @@ export async function getGlobalInitialProps(ctx) {
   ])
   const navigation = globalRes.data.attributes.NavigationMenu
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global: { app: globalRes.data, footer: footerRes.data, mediaLinks: mediaLinksRes.data, navigation } } };
+  return { ...appProps, pageProps: { global: { app: globalRes.data, footer: footerRes.data, mediaLinks: mediaLinksRes.data, navigation }, ...initialProps } };
 };
 
 MyApp.getInitialProps = getGlobalInitialProps

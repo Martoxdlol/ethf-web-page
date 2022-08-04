@@ -1,11 +1,11 @@
 .footer {
     margin-top: 50px!important;
-    font-size: 19px;
+    font-size: 17px;
     overflow: hidden;
 }
 
 .footer a {
-    color: #0f79b3;
+    color: var(--ethf-blue);
 }
 
 .footer hr {
@@ -28,7 +28,7 @@
 }
 
 .social figure {
-    margin: 20px 10px;
+    margin: 20px 6px;
 }
 
 .social img {

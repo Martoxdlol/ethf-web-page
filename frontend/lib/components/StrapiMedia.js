@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Image from 'next/image'
 import styles from '../../styles/components/StrapiMedia.module.css'
 
@@ -13,13 +14,13 @@ export default function StrapiMedia({ src, video, imageStyle, videoStyle, useRef
                 <video {...props} controls className={styles.BGVideo}>
                     <source src={src.attributes.url} />
                 </video>
-                <video {...props} controls className={styles.video}>
+                <video {...props} controls className={classNames(styles.video, props.className)}>
                     <source src={src.attributes.url} />
                 </video>
             </div>
 
         }
-        return <video {...props} controls style={{ ...props.style, ...videoStyle, }} ref={useRef}>
+        return <video {...props} controls style={{ ...props.style, ...videoStyle, }} ref={useRef} className={classNames(styles.video, props.className)}>
             <source src={src.attributes.url} />
         </video>
         return c
