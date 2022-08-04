@@ -1,1 +1,24 @@
-{}
+{
+  "name": "ethf_web_page",
+  "version": "1.0.0",
+  "description": "Henry Ford Technical School's web page",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx concurrently \"npm:backend\" \"npm:frontend\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Martoxdlol/ethf-web-page.git"
+  },
+  "author": "Tomás Cichero <martoxdlol@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Martoxdlol/ethf-web-page/issues"
+  },
+  "homepage": "https://github.com/Martoxdlol/ethf-web-page#readme",
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
