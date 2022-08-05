@@ -101,6 +101,7 @@ export default function PageRenderer(props) {
             title={Metadata?.Title || Title}
             image={Metadata?.Image?.data?.attributes.url || Video_or_Image?.data?.attributes.url}
             description={Metadata?.Description || Subtitle}
+            type='article'
         />
         <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} />
         <article>

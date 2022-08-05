@@ -3,7 +3,7 @@ import Script from "next/script"
 import { useContext } from "react"
 import { GlobalContext } from "../../pages/_app"
 
-export default function AppHead({ children, title, description, image, url }) {
+export default function AppHead({ children, title, description, image, url, type }) {
     const global = useContext(GlobalContext)
 
     const defaultImageUrl = global?.app?.attributes?.DefaultImage?.data?.attributes?.url
@@ -20,7 +20,7 @@ export default function AppHead({ children, title, description, image, url }) {
             <meta name="description" content={metaDescription} />
             <meta property="og:title" content={title || defaultSiteName} />
             <meta property="og:description" content={description} />
-            <meta property="og:type" content="website" />
+            <meta property="og:type" content={type || "website"} />
             <meta property="og:image" content={image || defaultImageUrl} />
             <meta property="og:locale" content="es_AR" />
             {url && <meta property="og:url" content={url} />}
