@@ -51,7 +51,8 @@ export async function getStaticProps(context) {
     const posts = category?.data[0]?.attributes?.posts?.data
 
     return {
-        props: { posts: posts, category: category.data[0] || { attributes: null } }
+        props: { posts: posts, category: category.data[0] || { attributes: null } },
+        revalidate: 30
     }
 
 }

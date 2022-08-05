@@ -20,7 +20,8 @@ export async function getStaticProps() {
 
 
     return {
-        props: { categories: categories.data, page: pageData.data }
+        props: { categories: categories.data, page: pageData.data },
+        revalidate: 30,
     }
 
 }
@@ -41,7 +42,6 @@ export default function PostsPage({ categories, page: { attributes: page } }) {
             </Container>
         </Header>
         <Container>
-            {categories?.map(category => category.attributes.name)}
             <SquaresGrid SquareCards={categories?.map(category => {
                 return {
                     Title: category.attributes.name,
