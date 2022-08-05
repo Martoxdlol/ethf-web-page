@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "npx concurrently \"npm:backend\" \"npm:frontend\"",
+    "dev": "npx concurrently \"npm:dev_backend\" \"npm:dev_frontend\"",
     "backend": "cd backend && npm start",
-    "frontend": "cd frontend && npm start"
+    "frontend": "cd frontend && npm start",
+    "dev_backend": "cd backend && npm run develop",
+    "dev_frontend": "cd frontend && npm run dev"
   },
   "repository": {
     "type": "git",
