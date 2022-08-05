@@ -13,11 +13,15 @@ import { useEffect } from 'react'
 // import ContentRenderer from '../lib/components/ContentRenderer'
 
 const Home = ({ homepage }) => {
-  const { Title, Subtitle, Image, HomeLinks, Cards, Video, StartVideoAferTimeInMS } = homepage.attributes
+  const { Title, Subtitle, Image, HomeLinks, Cards, Video, StartVideoAferTimeInMS , ...props} = homepage.attributes
 
   return (
     <>
-      <AppHead title={Title} />
+      <AppHead
+        title={Title}
+        image={getStrapiMedia(Image)}
+        description={Subtitle}
+      />
       <Navigation />
       <Header image={getStrapiMedia(Image)} video={Video} videoDelay={StartVideoAferTimeInMS}>
         <br />

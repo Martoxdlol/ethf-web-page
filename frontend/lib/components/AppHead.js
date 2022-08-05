@@ -10,14 +10,16 @@ export default function AppHead({ children, title, description, image, url }) {
     const defaultSiteDescription = global?.app?.attributes?.SiteDescription
     const defaultSiteName = global?.app?.attributes?.siteName
 
+    const metaDescription = description || defaultSiteDescription || 'Escuela Secundaria de Educación Técnica Henry Ford'
 
     return <>
         <Head>
             <link rel="icon" href="/logo128.png" />
             <title>{title}</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="description" content={metaDescription} />
             <meta property="og:title" content={title || defaultSiteName} />
-            <meta property="og:description" content={description || defaultSiteDescription || 'Escuela Secundaria de Educación Técnica Henry Ford'} />
+            <meta property="og:description" content={description} />
             <meta property="og:type" content="website" />
             <meta property="og:image" content={image || defaultImageUrl} />
             <meta property="og:locale" content="es_AR" />

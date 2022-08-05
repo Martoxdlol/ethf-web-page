@@ -52,7 +52,7 @@ export default function Navigation({ white, extraLinks, excludeGlobal }) {
     <>
       <nav className={classNames(styles.nav, { [styles.white]: white })} ref={navRef}>
         <div className={styles.logo}>
-          <Link href="/"><a><Image src='/logo128.png' width={60} height={60} /></a></Link>
+          <Link href="/"><a><Image src='/logo128.png' alt="Logo" width={60} height={60} /></a></Link>
         </div>
 
         {/* Normal desktop menu */}
@@ -62,10 +62,10 @@ export default function Navigation({ white, extraLinks, excludeGlobal }) {
           </li>)}
         </ul>
         <ul className={styles.icon}>
-          <Link href="/buscar"><a><MaterialIcon icon="search" /></a></Link>
+          <li><Link href="/buscar"><a><MaterialIcon icon="search" /></a></Link></li>
         </ul>
         <ul className={styles.icon}>
-          <ToggleMenuButton><a><MaterialIcon icon="menu" /></a></ToggleMenuButton>
+        <li><ToggleMenuButton><a><MaterialIcon icon="menu" /></a></ToggleMenuButton></li>
         </ul>
       </nav>
       {isOpen && <NavSideMenu extraLinks={extraLinks} excludeGlobal={excludeGlobal} />}

@@ -23,6 +23,10 @@
     min-height: 46px;
 }
 
+.nav .icon li {
+    height: 100%;
+}
+
 .nav .icon a {
     display: flex;
     justify-items: center;
@@ -50,10 +54,11 @@
     padding: 13px 20px;
     color: white;
     font-weight: 600;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
-.nav .ul .li a:hover, .nav .icon a:hover {
+.nav .ul .li a:hover,
+.nav .icon a:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -67,7 +72,7 @@
 
 @media (max-width: 768px) {
     .ul {
-        display: none!important;
+        display: none !important;
     }
 }
 
@@ -85,5 +90,5 @@
 
 
 .white.nav .logo img {
-    height: 36px!important;
+    height: 36px !important;
 }
