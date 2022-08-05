@@ -2,7 +2,6 @@ import __styles from '../../styles/PageTemplate.module.css'
 import styles from '../../styles/Header.module.css'
 import Separator from './Separator'
 import classNames from 'classnames'
-import Image from 'next/image'
 import StrapiMedia from './StrapiMedia'
 import { getStrapiMedia } from '../media'
 

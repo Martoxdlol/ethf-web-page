@@ -1,5 +1,3 @@
-import { getStrapiURL } from '../api';
-import Image from 'next/image'
 import styles from '../../styles/components/SlideShow.module.css'
 import StrapiMedia from './StrapiMedia';
 import MaterialIcon from './MaterialIcon'

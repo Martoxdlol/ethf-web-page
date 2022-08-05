@@ -1,6 +1,8 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import styles from '../../styles/components/StrapiMedia.module.css'
+import getStrapiUrl from '../getStrapiUrl'
+
 
 export default function StrapiMedia({ src, video, imageStyle, videoStyle, useRef, backgroundBlured, ...props }) {
     if (src?.data && !src?.attributes) src = src.data
@@ -25,7 +27,7 @@ export default function StrapiMedia({ src, video, imageStyle, videoStyle, useRef
         </video>
         return c
     } else if (src?.attributes?.mime.startsWith('image')) {
-        return <Image itemRef={useRef} src={src.attributes.url} alt={src.attributes.alternativeText} width="100%" height="100%" layout="responsive" {...props} style={{ ...imageStyle, ...props.style }} />
+        return <Image itemRef={useRef} src={getStrapiUrl(src.attributes.url)} alt={src.attributes.alternativeText} width="100%" height="100%" layout="responsive" {...props} style={{ ...imageStyle, ...props.style }} />
     }
     return null
 }
