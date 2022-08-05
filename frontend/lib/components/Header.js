@@ -21,7 +21,7 @@ export default function Header({ image, title, subtitle, pretitle, children, col
 
     const alt = image?.data?.attributes?.alternativeText
 
-    return <header className={classNames(__styles.header, styles.header)} style={{ maxHeight: !fullMedia && '50vh' }}>
+    return <header className={classNames(__styles.header, styles.header, {[styles.fullMedia]: fullMedia})}>
         <StrapiMedia src={image} layout="fill" autoPlay loop muted backgroundBlured />
         {showheader && <div className={__styles.overlay}>
             <p>{pretitle}</p>
