@@ -105,7 +105,7 @@ export default function PageRenderer(props) {
         />
         <Navigation extraLinks={NavigationMenu?.Links ?? []} excludeGlobal={!!ReplaceGlobalNavigationMenu} />
         <article>
-            <Header color="#666" image={Video_or_Image} alt={alt} fullMedia={FullMedia}>
+            <Header color="#666" image={Video_or_Image} alt={alt} fullMedia={FullMedia} fullMediaOnMobile={true}>
                 <Container className={styles.head}>
 
 

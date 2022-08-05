@@ -6,7 +6,7 @@ import StrapiMedia from './StrapiMedia'
 import { getStrapiMedia } from '../media'
 
 
-export default function Header({ image, title, subtitle, pretitle, children, color, fullMedia }) {
+export default function Header({ image, title, subtitle, pretitle, children, color, fullMedia, fullMediaOnMobile }) {
     const showheader = !!image?.data || !!title || !!subtitle || !!pretitle
 
     if (!showheader) {
@@ -21,7 +21,7 @@ export default function Header({ image, title, subtitle, pretitle, children, col
 
     const alt = image?.data?.attributes?.alternativeText
 
-    return <header className={classNames(__styles.header, styles.header, {[styles.fullMedia]: fullMedia})}>
+    return <header className={classNames(__styles.header, styles.header, { [styles.fullMedia]: fullMedia, [styles.fullMediaOnMobile]: fullMediaOnMobile })}>
         <StrapiMedia src={image} layout="fill" autoPlay loop muted backgroundBlured />
         {showheader && <div className={__styles.overlay}>
             <p>{pretitle}</p>
