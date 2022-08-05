@@ -10,6 +10,8 @@ const nextConfig = {
   rewrites
 }
 
+console.log("Strapi URL", getStrapiURL(""))
+
 function rewrites() {
   return [
     {
