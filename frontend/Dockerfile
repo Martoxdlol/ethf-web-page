@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 ENV NODE_ENV=production
-ENV NEXT_PUBLIC_STRAPI_API_URL=http://cms.henryford.edu.ar
+ENV NEXT_PUBLIC_STRAPI_API_URL=https://cms.henryford.edu.ar
 
 RUN npm run build
 
