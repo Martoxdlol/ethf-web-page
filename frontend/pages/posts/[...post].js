@@ -165,12 +165,12 @@ export default function PageRenderer(props) {
                         "datePublished": CreationDate || createdAt,
                         "dateModified": LastUpdated || updatedAt,
                         "author": {
-                            "@type": "Person",
-                            "name": "Person’s Name"
+                            "@type": Author ? "Person" : "Organization",
+                            "name": Author || 'Escuela Técnica Henry Ford'
                         },
                         "publisher": {
                             "@type": "Organization",
-                            "name": Author || 'Escuela Técnica Henry Ford',
+                            "name": 'Escuela Técnica Henry Ford',
                             // "logo": {
                             //     "@type": "ImageObject",
                             //     "url": "http://applefostering.co.uk/apple-logo-schema/",
