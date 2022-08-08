@@ -32,7 +32,8 @@
         "components.squares-grid",
         "components.files-card",
         "components.iframe",
-        "components.link-list"
+        "components.link-list",
+        "components.html"
       ]
     },
     "Metadata": {
