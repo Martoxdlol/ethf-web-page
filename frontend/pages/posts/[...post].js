@@ -110,10 +110,10 @@ export default function PageRenderer(props) {
 
 
                     <p className={styles.preTitleLinks}>
-                        {categoriesList?.length && categoriesList.map((category, i) => <><Link href={"/posts/categoria/" + category.attributes.slug}>
+                        {categoriesList?.length ? categoriesList.map((category, i) => <><Link href={"/posts/categoria/" + category.attributes.slug}>
                             <a>{category.attributes.name}</a>
                         </Link> | </>
-                        )}
+                        ) : ''}
                         <Link href="/posts"><a>Publicaciones</a>
                         </Link>
                     </p>
