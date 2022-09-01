@@ -1,0 +1,7 @@
+# ethf-web-page
+
+## This is the web page of "Escuela de Educación Técnica Henry Ford". (https://www.henryford.edu.ar/)[https://www.henryford.edu.ar/]
+
+Its made with next-js and strapi
+
+It has the abaility to add pages, and posts. Posts can be organized into different categories
