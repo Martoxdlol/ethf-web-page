@@ -1,6 +1,6 @@
 # ethf-web-page
 
-## This is the web page of "Escuela de Educación Técnica Henry Ford". (https://www.henryford.edu.ar/)[https://www.henryford.edu.ar/]
+## This is the web page of "Escuela de Educación Técnica Henry Ford". [https://www.henryford.edu.ar/](https://www.henryford.edu.ar/)
 
 Its made with next-js and strapi
 
