@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: "default",
-    domains: ["localhost", "10.0.31.28", "cms.henryford.edu.ar"],
+    domains: ["localhost", "10.0.31.28", "cms.henryford.edu.ar", "backend--admin.coder.henryford.edu.ar"],
   },
   rewrites
 }

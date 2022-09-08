@@ -4,6 +4,7 @@
   "description": "Henry Ford Technical School's web page",
   "main": "index.js",
   "scripts": {
+    "install": "cd frontend && npm install && cd ../backend && npm install",
     "start": "npx concurrently \"npm:backend\" \"npm:frontend\"",
     "dev": "npx concurrently \"npm:dev_backend\" \"npm:dev_frontend\"",
     "backend": "cd backend && npm start",
