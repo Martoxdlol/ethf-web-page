@@ -5,3 +5,9 @@
 Its made with next-js and strapi
 
 It has the abaility to add pages, and posts. Posts can be organized into different categories
+
+![How it looks](captures/capture1.png "Index main view").
+
+![How it looks](captures/capture4.png "Index, featured view").
+
+![How it looks](captures/capture2.png "News view").
