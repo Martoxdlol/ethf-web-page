@@ -65,7 +65,7 @@ export default function Navigation({ white, extraLinks, excludeGlobal }) {
           <li><Link href="/buscar"><a><MaterialIcon icon="search" /></a></Link></li>
         </ul>
         <ul className={styles.icon}>
-        <li><ToggleMenuButton><a><MaterialIcon icon="menu" /></a></ToggleMenuButton></li>
+        <li><ToggleMenuButton><a className={styles.menuBtn}><div className={styles.menuBtnBorder}><span>MENU</span><MaterialIcon icon="menu" /></div></a></ToggleMenuButton></li>
         </ul>
       </nav>
       {isOpen && <NavSideMenu extraLinks={extraLinks} excludeGlobal={excludeGlobal} />}

@@ -92,3 +92,21 @@
 .white.nav .logo img {
     height: 36px !important;
 }
+
+.menuBtn span {
+    margin-right: 5px;
+}
+
+.menuBtnBorder {
+    font-size: 17px;
+    display: block;
+    padding: 4px 7px;
+    border: 2px solid white;
+    border-radius: 6px;
+    font-weight: 500;
+    display: flex;
+}
+
+.white .menuBtnBorder{
+    border: 1px solid black;
+}
