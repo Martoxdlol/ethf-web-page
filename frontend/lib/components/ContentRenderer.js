@@ -31,6 +31,20 @@ export default function ContentRenderer({ content, css }) {
             dangerouslySetInnerHTML={{ __html: '<style>' + (css ?? '') + '</style>' + content }}
             onClick={(e) => {
                 if (e.target.tagName === "A") {
+
+                    if (e.target.getAttribute('target') === '_blank') {
+                        return
+                    }
+
+                    const url = new URL(window.location.href, e.target.href)
+                    if (url.pathname.search('/moodle') == 0 || url.pathname.search('/public') == 0 || url.pathname.search('/firmas') == 0) {
+                        return
+                    }
+
+                    if (e.target.getAttribute('target') === '_blank') {
+                        return
+                    }
+
                     e.preventDefault()
                     router.push(e.target.href)
                 }
