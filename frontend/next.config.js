@@ -18,6 +18,10 @@ function rewrites() {
       source: "/uploads/:id",
       destination: getStrapiURL("/uploads/:id"),
     },
+    {
+      source: "/sitemap.xml",
+      destination: "/api/sitemap.xml",
+    },
   ];
 };
 

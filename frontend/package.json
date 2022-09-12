@@ -21,7 +21,8 @@
     "react-markdown": "^8.0.3",
     "react-moment": "^1.1.2",
     "react-slideshow-image": "^3.7.5",
-    "sharp": "^0.30.7"
+    "sharp": "^0.30.7",
+    "xml": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "8.18.0",
