@@ -6,6 +6,7 @@ import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import '../styles/globals.css'
 import setLocaleTo_ES_WithData from 'moment_spanish_locale';
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 setLocaleTo_ES_WithData(moment)
 
@@ -23,6 +24,7 @@ const MyApp = ({ Component, pageProps }) => {
           href={getStrapiMedia(global?.app?.attributes?.favicon)}
         />
       </Head>
+      <GoogleAnalytics trackPageViews />
       <GlobalContext.Provider value={global}>
         <Component {...pageProps} />
       </GlobalContext.Provider>

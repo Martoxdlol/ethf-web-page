@@ -26,13 +26,13 @@ export default function AppHead({ children, title, description, image, url, type
             {url && <meta property="og:url" content={url} />}
             {children}
         </Head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-61MY92XHNB" onLoad={() => {
+        {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-61MY92XHNB" onLoad={() => {
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 window.dataLayer.push(arguments);
             }
             gtag('js', new Date());
             gtag('config', 'G-61MY92XHNB');
-        }} />
+        }} /> */}
     </>
 }
