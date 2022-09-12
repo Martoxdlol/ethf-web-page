@@ -35,17 +35,20 @@ export default function ContentRenderer({ content, css }) {
 
                     if (e.target.getAttribute('target') === '_blank') {
                         console.log("_blank")
+                        location.href = e.target.href
                         return
                     }
 
                     const url = new URL(window.location.href, e.target.href)
                     if (url.pathname.search('/moodle') == 0 || url.pathname.search('/public') == 0 || url.pathname.search('/firmas') == 0) {
                         console.log("known external link")
+                        location.href = e.target.href
                         return
                     }
 
                     if (e.target.href.search('https://') == 0 || e.target.href.search('http://') == 0) {
                         console.log("http(s)")
+                        location.href = e.target.href
                         return
                     }
 
