@@ -35,8 +35,8 @@ export default function ContentRenderer({ content, css }) {
 
                     if (e.target.getAttribute('target') === '_blank') {
                         console.log("_blank")
-                        window.history.back()
-                        window.open('e.target.href', '_blank');
+                        // window.history.back()
+                        window.open(e.target.href, '_blank');
                         return
                     }
 
