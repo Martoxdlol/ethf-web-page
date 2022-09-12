@@ -3,6 +3,23 @@ import { useLayoutEffect, useRef } from 'react'
 import styles from '../../styles/ContentRenderer.module.css'
 // import pageCss from '../pageCss'
 
+function shouldLoadFullPage(anchorElem) {
+    if (e.target.getAttribute('target') === '_blank') {
+        return true
+    }
+
+    if (e.target.href.search('https://') == 0 || e.target.href.search('http://') == 0) {
+        return true
+    }
+
+    const url = new URL(window.location.href, e.target.href)
+    if (url.pathname.search('/moodle') == 0 || url.pathname.search('/public') == 0 || url.pathname.search('/firmas') == 0) {
+        return true
+    }
+
+    return false
+}
+
 export default function ContentRenderer({ content, css }) {
     const ref = useRef(null)
 
@@ -15,6 +32,8 @@ export default function ContentRenderer({ content, css }) {
                 const links = ref.current.querySelectorAll('a')
                 for (const link of Array.from(links)) {
                     link.addEventListener('click', (e) => {
+                        if (shouldLoadFullPage(e.target)) return
+                        e.stopPropagation()
                         e.preventDefault()
                         router.push(link.href)
                     })
@@ -30,34 +49,12 @@ export default function ContentRenderer({ content, css }) {
         <div
             dangerouslySetInnerHTML={{ __html: '<style>' + (css ?? '') + '</style>' + content }}
             onClick={(e) => {
-                return
                 if (e.target.tagName === "A") {
+                    if (shouldLoadFullPage(e.target)) return
                     e.stopPropagation()
-
-                    if (e.target.getAttribute('target') === '_blank') {
-                        console.log("_blank")
-                        // window.history.back()
-                        window.open(e.target.href, '_blank');
-                        return
-                    }
-
-                    const url = new URL(window.location.href, e.target.href)
-                    if (url.pathname.search('/moodle') == 0 || url.pathname.search('/public') == 0 || url.pathname.search('/firmas') == 0) {
-                        console.log("known external link")
-                        window.history.back()
-                        location.href = e.target.href
-                        return
-                    }
-
-                    if (e.target.href.search('https://') == 0 || e.target.href.search('http://') == 0) {
-                        console.log("http(s)")
-                        window.history.back()
-                        location.href = e.target.href
-                        return
-                    }
-
                     e.preventDefault()
-                    // router.push(e.target.href)
+
+                    router.push(e.target.href)
                 }
             }}
         />
