@@ -17,6 +17,7 @@ COPY . .
 
 ENV NODE_ENV=production
 ENV NEXT_PUBLIC_STRAPI_API_URL=https://cms.henryford.edu.ar
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=G-61MY92XHNB
 
 RUN npm run build
 
