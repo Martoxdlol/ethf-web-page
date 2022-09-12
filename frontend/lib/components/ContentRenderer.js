@@ -30,6 +30,7 @@ export default function ContentRenderer({ content, css }) {
         <div
             dangerouslySetInnerHTML={{ __html: '<style>' + (css ?? '') + '</style>' + content }}
             onClick={(e) => {
+                return
                 if (e.target.tagName === "A") {
                     e.stopPropagation()
 
@@ -56,7 +57,7 @@ export default function ContentRenderer({ content, css }) {
                     }
 
                     e.preventDefault()
-                    router.push(e.target.href)
+                    // router.push(e.target.href)
                 }
             }}
         />
