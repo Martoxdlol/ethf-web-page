@@ -33,7 +33,7 @@ export default function ContentRenderer({ content, css }) {
                 for (const link of Array.from(links)) {
                     link.addEventListener('click', (e) => {
                         if (shouldLoadFullPage(e.target)) return
-                        e.stopPropagation()
+                        // e.stopPropagation()
                         e.preventDefault()
                         router.push(link.href)
                     })
@@ -50,11 +50,11 @@ export default function ContentRenderer({ content, css }) {
             dangerouslySetInnerHTML={{ __html: '<style>' + (css ?? '') + '</style>' + content }}
             onClick={(e) => {
                 if (e.target.tagName === "A") {
-                    if (shouldLoadFullPage(e.target)) return
-                    e.stopPropagation()
+                    // if (shouldLoadFullPage(e.target)) return
+                    // e.stopPropagation()
                     e.preventDefault()
 
-                    router.push(e.target.href)
+                    // router.push(e.target.href)
                 }
             }}
         />
