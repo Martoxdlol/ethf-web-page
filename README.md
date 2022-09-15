@@ -1,5 +1,7 @@
 # ethf-web-page
 
+# This repo is outdated. Continue at: [https://github.com/EscuelaTecnicaHenryFord/ethf-web-page](https://github.com/EscuelaTecnicaHenryFord/ethf-web-page)
+
 ## This is the web page of "Escuela de Educación Técnica Henry Ford". [https://www.henryford.edu.ar/](https://www.henryford.edu.ar/)
 
 Its made with next-js and strapi
